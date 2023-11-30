@@ -1,3 +1,5 @@
-.color{
-  background-color: 525D62;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
