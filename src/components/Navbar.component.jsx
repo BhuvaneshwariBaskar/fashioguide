@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import "../App.css";
+import "../App.css";
 
 const Navbar = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -27,7 +27,7 @@ const Navbar = () => {
           <span>Category</span>
           <button onClick={handleIconClick}>
        
-            <img className="flex items-center justify-center" width="24" height="24" src="https://img.icons8.com/material-rounded/24/000000/expand-arrow--v1.png" alt="expand-arrow--v1"/>
+            <img className="flex items-center " width="24" height="24" src="https://img.icons8.com/material-rounded/24/000000/expand-arrow--v1.png" alt="expand-arrow--v1"/>
           </button>
 
           {isDropdownVisible && (
@@ -46,10 +46,10 @@ const Navbar = () => {
         <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/000000/like--v1.png" alt="like--v1"/>
         </Link>
         <Link to="/">
-        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/000000/like--v1.png" alt="like--v1"/>
+        <img width="30" height="30" src="https://img.icons8.com/ios/50/000000/shopping-bag--v1.png" alt="shopping-bag--v1"/>
         </Link>
         <Link to="/">
-        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/000000/like--v1.png" alt="like--v1"/>
+        <img width="30" height="30" src="https://img.icons8.com/ios/50/000000/user--v1.png" alt="user--v1"/>
         </Link>
       </div>
     </nav>
