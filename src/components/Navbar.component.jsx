@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="bg-[#525D62] p-4 flex justify-between items-center">
       <div>
         <Link to="/">
-          <img src="./asset/logo.png" alt="Logo" className="text-white" />
+          <img src="../src/asset/logo.png" alt="Logo" className="text-white" />
         </Link>
       </div>
 
