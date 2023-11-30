@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import "../App.css";
 
 const Navbar = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -13,13 +12,13 @@ const Navbar = () => {
     <nav className="bg-[#525D62] p-4 flex justify-between items-center">
       <div>
         <Link to="/">
-          <img src="./asset/logo.png" alt="Logo" className="text-white" />
+          <img src="../src/asset/logo.png" alt="Logo" className="text-white" />
         </Link>
       </div>
 
       <div className="flex items-end space-x-4 text-white">
         <Link to="/">Home</Link>
-        <Link to="/">Collections</Link>
+        <Link to="/collections">Collections</Link>
         
 
        
