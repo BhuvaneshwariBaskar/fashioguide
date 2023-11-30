@@ -23,15 +23,15 @@ const Navbar = () => {
         
 
        
-        <div className="relative group">
+        <div className="relative group flex items-center">
           <span>Category</span>
           <button onClick={handleIconClick}>
        
-            <img className="flex items-center " width="24" height="24" src="https://img.icons8.com/material-rounded/24/000000/expand-arrow--v1.png" alt="expand-arrow--v1"/>
+            <img  width="25" height="25" src="https://img.icons8.com/material-rounded/24/ffffff/expand-arrow--v1.png" alt="expand-arrow--v1"/>
           </button>
 
           {isDropdownVisible && (
-            <div className="absolute bg-neutral-500 text-white flex flex-col">
+            <div className="absolute bg-white text-black flex flex-col">
       
               <Link to="/men">Men Collection</Link>
               <Link to="/women">Women Collection</Link>
@@ -43,13 +43,13 @@ const Navbar = () => {
         <Link to="/tryon">Try On</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/">
-        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/000000/like--v1.png" alt="like--v1"/>
+        <img width="25" height="25" src="https://img.icons8.com/ios-glyphs/30/ffffff/like--v1.png" alt="like--v1"/>
         </Link>
         <Link to="/">
-        <img width="30" height="30" src="https://img.icons8.com/ios/50/000000/shopping-bag--v1.png" alt="shopping-bag--v1"/>
+        <img width="25" height="25" src="https://img.icons8.com/ios/50/ffffff/shopping-bag--v1.png" alt="shopping-bag--v1"/>
         </Link>
         <Link to="/">
-        <img width="30" height="30" src="https://img.icons8.com/ios/50/000000/user--v1.png" alt="user--v1"/>
+        <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/ffffff/user-male-circle.png" alt="user-male-circle"/>
         </Link>
       </div>
     </nav>
