@@ -1,3 +1,4 @@
+
 module.export = (sequelize, DataTypes) => {
     const User = sequelize.define("user", {
         user_id: {
@@ -63,9 +64,12 @@ module.export = (sequelize, DataTypes) => {
             type: DataTypes.JSON,
             allowNull: true,
             defaultValue: []
-        },
+        }
        
 
     }
     )
+    // User.sync({ force: true }).then(() => console.log('USER MODEL CREATED')).catch((err) => console.log('ERROR ' + err))
+
+    return User;
 }
