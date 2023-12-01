@@ -1,36 +1,84 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar2 from "../components/Navbar/Navbar2.component"
+import Roundcard from '../components/Collectioncompo/Roundcard'
+import { Dresscollection } from '../utils/collection'
 
 const Individual = () => {
-  return (
-    <>
-    <Navbar2></Navbar2>
-    <h6 className='mt-6 p-4'>Home/Dresses & Jumpsuits for Women/LOV Dark Brown Layered Shimmer Dress</h6>
-    <div className="flex w-[100vw] h-[100vh]">
+    const [indiv, setIndiv] = useState([]);
+    useEffect(() => {
+        // console.log(Dresscollection);
+        if (Dresscollection && Dresscollection.length > 0) {
+            setIndiv(Dresscollection);
 
-<div className="bg-[#936A68]  w-1/2 h-full ">
-  {/* <img
-    src=""
-    alt="Your Image"
-    className="rounded-full object-cover"
-  /> */}
 
-</div>
+        }
+    }, [indiv]);
+    console.log(indiv);
+    let arr = indiv[0];
+    console.log(arr);
 
-<div className="flex w-1/2 h-full flex-col items-center justify-center bg-white">
-  {/* <p className="mb-3 font-dancing-script text-5xl text-white">AW Collections</p>
+    return (
+        <>
+            <Navbar2></Navbar2>
+            <div className="bg-[#EEEEEE]">
+                <h6 className='mt-6 p-4'>Home/Dresses & Jumpsuits for Women/LOV Dark Brown Layered Shimmer Dress</h6>
+                <div className="flex w-[100vw] h-[100vh]">
 
-  <p className="mb-6 text-7xl text-white">Worn Out</p>
-  <p className="mb-6 text-7xl text-white">Elegantly</p>
+                    <div className=" p-4 w-1/3 h-full ">
+                        {/* <div className=" h-full my-5 mr-5 ml-[5%] pb-5 flex-row position: relative">
+                            <div class="position:relative justify-center items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                                {indiv &&
+                                    indiv.map((dress, index) => (
+                                        <Roundcard individual={dress} index={index} />
+                                    ))}
+                            </div>
+                        </div> */}
+                        <h1>{arr && arr.dress_name}</h1>
+                        <div className="h-[20] w-[20]">
 
-  <button className="bg-[#795E4A] text-white px-4 py-2 rounded">
-    Dive in to the store
-  </button> */}
-</div>
 
-</div>
-    </>
-  )
+                            {/* <img
+                                src={arr && arr.image}
+                                alt="Your Image"
+                                className="l object-cover"
+                            /> */}
+
+                        </div>
+                        <div class="position:relative justify-center items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 h-[50] w-[50]">
+                        
+                        <img
+                                src={arr && arr.image}
+                                alt="Your Image"
+                                className="l object-cover"
+                            />
+                             <img
+                                src={arr && arr.image}
+                                alt="Your Image"
+                                className="l object-cover"
+                            />
+                             <img
+                                src={arr && arr.image}
+                                alt="Your Image"
+                                className="l object-cover"
+                            />
+                             <img
+                                src={arr && arr.image}
+                                alt="Your Image"
+                                className="l object-cover"
+                            />
+                        </div>
+
+
+                    </div>
+
+                    <div className=" flex w-2/3 h-full flex-col items-center justify-center ">
+
+                    </div>
+
+                </div>
+            </div>
+        </>
+    )
 }
 
 export default Individual
