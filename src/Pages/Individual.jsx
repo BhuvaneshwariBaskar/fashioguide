@@ -45,23 +45,23 @@ const Individual = () => {
 
                         </div>
                         <div class="position:relative justify-center items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 h-[50] w-[50]">
-                        
-                        <img
+
+                            <img
                                 src={arr && arr.image}
                                 alt="Your Image"
                                 className="l object-cover"
                             />
-                             <img
+                            <img
                                 src={arr && arr.image}
                                 alt="Your Image"
                                 className="l object-cover"
                             />
-                             <img
+                            <img
                                 src={arr && arr.image}
                                 alt="Your Image"
                                 className="l object-cover"
                             />
-                             <img
+                            <img
                                 src={arr && arr.image}
                                 alt="Your Image"
                                 className="l object-cover"
@@ -72,9 +72,24 @@ const Individual = () => {
                     </div>
 
                     <div className=" flex w-2/3 h-full flex-col items-center justify-center ">
+                        <div className="p-2 font-bold">
+                            <div>LOV</div>
+                            <div>LOV Wine Paisley Printed Midi Dress</div>
+                            <div>₹ 2,499.00</div>
+                        </div>
+                        <div className="flex items-center">
+                            <div className="mr-2">Size:</div>
+                            {arr && arr.size && arr.size.length > 0 && (
+                                <div className="flex">
+                                    {arr.size.map((size, index) => (
+                                        <div key={index} className="mr-2">{size}</div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                       
 
                     </div>
-
                 </div>
             </div>
         </>
