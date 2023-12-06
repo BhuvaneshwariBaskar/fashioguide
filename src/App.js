@@ -19,7 +19,6 @@ function App() {
     <Route path="/category" element={<Category/>}/>
     <Route path="/collections" element={<Collection/>}></Route>
     <Route path="/individual" element={<Individual/>}></Route>
-    <Route path="/singlecollection" element={<SingleCollection/>}></Route>
     <Route path="/cart" element={<Cart/>}></Route>
     </Routes>
     </BrowserRouter>

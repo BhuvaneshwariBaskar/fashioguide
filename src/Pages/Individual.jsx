@@ -15,8 +15,8 @@ const Individual = () => {
     }, [indiv]);
     console.log(indiv);
     let arr = indiv[0];
-    console.log(arr);
-
+    // let size=indiv[0].size;
+    console.log(arr.size);
     return (
         <>
             <Navbar2></Navbar2>
@@ -79,13 +79,13 @@ const Individual = () => {
                         </div>
                         <div className="flex items-center">
                             <div className="mr-2">Size:</div>
-                            {arr && arr.size && arr.size.length > 0 && (
+                            {arr && arr.length > 0 && (
                                 <div className="flex">
-                                    {arr.size.map((size, index) => (
-                                        <div key={index} className="mr-2">{size}</div>
+                                    {arr.map((arr, index) => (
+                                        {/* <div key={index} className="mr-2">{size}</div> */}
                                     ))}
                                 </div>
-                            )}
+                            )} 
                         </div>
                        
 
