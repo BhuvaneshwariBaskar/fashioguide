@@ -1,28 +1,22 @@
 import React ,{useEffect,useState}from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Dresscollection } from "../../utils/collection";
 
 
-const Singlecollection = () => {
+const Singlecollection = ({dress,index}) => {
   
   const navigate = useNavigate();
-  const [dressData, setDressData] = useState([]);
-  const navigateToPage=(e)=>{
-    navigate('/individualpage', { state: { data: e } });
-  }
-  useEffect(() => {
-    if ( Dresscollection && Dresscollection.length > 0) {
-      const data =  Dresscollection.filter((event) => event.gender_type === "Female");
-      setDressData(data);
-      console.log(dressData);
-    }
-  }, []);
+  // const navigateToPage=(e)=>{
+  //   navigate('/individualpage', { state: { data: e } });
+  // }
+
   return (
-    <div className="sm:w-96 position:relative justify-center items-center" onClick={navigateToPage()}>
-<div className="w-96 h-[50vh] position:relative justify-center items-center bg-white my-7 mt-7 mb-4 bg-cover bg-center" style={{ backgroundImage: `url(${Dresscollection})` }}>
+    <div className="sm:w-96 h-[80vh] position:relative justify-center items-center" >
+<div className="w-96 h-[60vh] position:relative justify-center items-center bg-white my-7 mt-7 mb-4 bg-cover bg-center" style={{ backgroundImage: `url(${dress.image})` }}>
       
       </div>
-      <h1 className='text-center text-2xl font-[inter]'>{}</h1>
+      <h1 className='text-left text-xl font-[inter]'>{dress.brand}</h1>
+      <h2 className='text-left font-light text-lg font-[inter]'>{dress.dress_name}</h2>
+      <h2 className='text-left font-light text-lg font-[inter]'>{dress.price}</h2>
 
     </div>
       

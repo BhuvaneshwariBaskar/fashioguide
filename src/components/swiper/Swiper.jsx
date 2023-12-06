@@ -7,8 +7,8 @@ import './swiper.css';
 
 const CircleSlider = () => {
   const sliderSettings = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
     slidesToShow: 8,
     slidesToScroll: 2,
