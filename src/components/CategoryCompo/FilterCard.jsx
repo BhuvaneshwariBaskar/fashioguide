@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const FilterCard = () => {
   const [sizeOfDress, setsizeOfDress] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
+  const [price, setPrice] = useState(0);
   let size = ["XS", "S", "M", "L", "XL"];
   let rating = [1, 2, 3, 4, 5];
 
@@ -23,6 +24,20 @@ const FilterCard = () => {
       <div class="h-48 mx-auto border-l-2 border-black" />
       <div className="w-[23%] h-[85%] flex-col justify-center items-center relative">
         <h3 className="text-xl font-bold text-gray-700 mb-4 ml-6">Price</h3>
+        <input
+          type="range"
+          min={100}
+          max={10000}
+          step={100}
+          value={price}
+          onChange={(e) => {
+            setPrice(e.target.value);
+          }}
+          className="w-[10vw] ml-16 mt-12"
+          style={{ accentColor: "#FF3754" }}
+          id="myRange"
+        />
+        <h1 className=" mt-4 text-center">{price}</h1>
       </div>
       {/* rating */}
       <div class="h-48 mx-auto border-l-2 border-black" />
@@ -55,8 +70,22 @@ const FilterCard = () => {
         </select>
       </div>
       <div className="w-[8%] h-[85%] flex-col justify-center items-center relative p-4 space-y-5">
-        <div className="w-[70px] h-[70px] rounded-full border-2 border-[#FF3754]"></div>
-        <div className="w-[70px] h-[70px] rounded-full border-2 border-[#FF3754]"></div>
+        <div className="w-[70px] h-[70px] rounded-full border-2 border-[#FF3754] flex justify-center items-center relative">
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/ios-glyphs/30/long-arrow-right.png"
+            alt="long-arrow-right"
+          />
+        </div>
+        <div className="w-[70px] h-[70px] rounded-full border-2 border-[#FF3754] flex justify-center items-center relative">
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/ios-glyphs/30/reboot.png"
+            alt="reboot"
+          />
+        </div>
       </div>
     </div>
   );

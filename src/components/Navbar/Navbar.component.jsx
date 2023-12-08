@@ -67,7 +67,7 @@ const Navbar = () => {
             alt="shopping-bag--v1"
           />
         </Link>
-        <Link to="/">
+        <Link to="/profile">
           <img
             width="25"
             height="25"
