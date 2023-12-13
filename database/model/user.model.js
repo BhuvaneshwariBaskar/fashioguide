@@ -1,75 +1,70 @@
+const { Sequelize } = require("sequelize");
 
-module.export = (sequelize, DataTypes) => {
-    const User = sequelize.define("user", {
-        user_id: {
-            type: DataTypes.STRING,
-            primaryKey: true,
-            allowNull: false
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique:true,
-            validate:{
-                isEmail:true
-            }
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        address: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        pincode: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        phone_no: {
-            type: DataTypes.STRING,
-            validate: {
-                min: 13, max: 13
-            },
-        },
-        gender:{
+const userModel = (sequelize) => {
+  const { DataTypes } = Sequelize;
+
+  return sequelize.define('Users', {
+    user_id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true,
+        allowNull: false,
+      },
+      email: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: true,
         },
-        order: {
-            type: DataTypes.JSON,
-            allowNull: true,
-            defaultValue: []
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      address: {
+        type: DataTypes.STRING,
+      },
+      pincode: {
+        type: DataTypes.STRING,
+      },
+      profileimg: {
+        type: DataTypes.STRING, // You may want to store the path or URL to the image
+      },
+      phone: {
+        type: DataTypes.STRING,
+        validate: {
+            min: 13, max: 13
         },
-        wishlist: {
-            type: DataTypes.JSON,
-            allowNull: true,
-            defaultValue: []
-        },
-        history: {
-            type: DataTypes.JSON,
-            allowNull: true,
-            defaultValue: []
-        },
-        recent_search_word: {
-            type: DataTypes.JSON,
-            allowNull: true,
-            defaultValue: []
-        },
-        bag: {
-            type: DataTypes.JSON,
-            allowNull: true,
-            defaultValue: []
-        }
-       
-
-    }
-    )
-    // User.sync({ force: true }).then(() => console.log('USER MODEL CREATED')).catch((err) => console.log('ERROR ' + err))
-
-    return User;
-}
+      },
+      gender: {
+        type: DataTypes.STRING,
+      },
+      orderList: {
+        type: DataTypes.JSON,
+        defaultValue: [] // Array of dress IDs for orders
+      },
+      wishlist: {
+        type: DataTypes.JSON,
+        defaultValue: [] // Array of dress IDs for wishlist
+      },
+      history: {
+        type: DataTypes.JSON,
+        defaultValue: [] // Array of dress IDs for history
+      },
+      recentSearchWords: {
+        type: DataTypes.JSON,
+        defaultValue: []// Array of recent search words
+      },
+      bag: {
+        type: DataTypes.JSON,
+        defaultValue: [] // Array of dress IDs for the shopping bag
+      },
+  });
+  
+};
+module.exports =userModel;

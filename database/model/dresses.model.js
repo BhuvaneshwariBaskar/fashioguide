@@ -1,47 +1,59 @@
-model.export = (sequelize, DataType) => {
-    const Dresses = sequelize.define("users", {
-        dress_id: {
-            type: DataTypes.STRING,
-            primaryKey: true,
-            allowNull: false
-        },
-        dress_name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        brand: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        size: {
-            type: DataTypes.JSON,
-            allowNull: true,
-            defaultValue: []
-        },
-        price: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        rating: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        category: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        gender_type: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        adding_date: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
+const { Sequelize } = require("sequelize");
+const categoryModel = require("./categoryModel");
 
+const dressModel = (sequelize) => {
+  const { DataTypes } = Sequelize;
 
-    })
-    // Dresses.sync({ force: true }).then(() => console.log('DRESSES MODEL CREATED')).catch((err) => console.log('ERROR ' + err))
+  return sequelize.define("Dresses", {
+    dress_id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
+      allowNull: false,
+    },
+    dress_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
-    return Dresses;
-}
+    category_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+          model: 'Categories', // This is the name of the target model (case-sensitive)
+          key: 'category_id'
+      }
+    },
+    brand: {
+      type: DataTypes.STRING,
+    },
+    size: {
+      type: DataTypes.JSON,
+      defaultValue: [],
+    },
+    image: {
+      type: DataTypes.JSON,
+      defaultValue: [],
+    },
+    price: {
+      type: DataTypes.DECIMAL(10, 2),
+    },
+    rating: {
+      type: DataTypes.INTEGER,
+    },
+    gender: {
+      type: DataTypes.STRING,
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+  });
+};
+module.exports = dressModel;

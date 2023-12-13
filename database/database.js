@@ -1,21 +1,40 @@
-if(process.env.NODE_ENV !== 'production') require('dotenv').config()
 const { Sequelize } = require("sequelize");
+const userModel = require("./model/user.model");
+const dressModel = require("./model/dresses.model");
+const categoryModel = require("./model/categoryModel");
 
-const db = {}
+const db = async () => {
+  const sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
+    {
+      host: process.env.DB_HOST,
+      dialect: "postgres",
+    }
+  );
 
-const sequelize = new Sequelize.Sequelize(process.env.DATABASE,process.env.USER,process.env.PASSWORD,{
-    host:process.env.HOST,
-    dialect:'postgres',
-    logging:false
-})
+  try {
+    // Authenticate
+    await sequelize.authenticate();
+    console.log("Connection has been established successfully.");
 
-sequelize.authenticate()
-.then(()=>console.log('DATABASE CONNECTED'))
-.catch(err=>console.log('ERROR:' +err))
+    // Define models
+    const User = userModel(sequelize);
+    const Dress = dressModel(sequelize);
+    const Category = categoryModel(sequelize);
 
-db.Sequelize=Sequelize
-db.sequelize=sequelize
-db.User=require("./model/user.model")(sequelize, Sequelize.DataTypes)
-db.Dresses=require("./model/dresses.model")(sequelize, Sequelize.DataTypes)
+    //Sync database
 
-module.exports = db
+    await sequelize.sync({ force: true });
+    console.log("Tables synchronized!");
+
+    // await Dress.sync({ force: true });
+    // console.log("Tables synchronized!");
+
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
+  }
+};
+
+module.exports = db;
