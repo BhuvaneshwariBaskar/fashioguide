@@ -26,11 +26,11 @@ const db = async () => {
 
     //Sync database
 
-    await sequelize.sync({ force: true });
-    console.log("Tables synchronized!");
-
-    // await Dress.sync({ force: true });
+    // await sequelize.sync({ force: true });
     // console.log("Tables synchronized!");
+
+    await Dress.sync({ force: true });
+    console.log("Tables synchronized!");
 
   } catch (error) {
     console.error("Unable to connect to the database:", error);
