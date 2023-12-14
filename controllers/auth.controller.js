@@ -14,13 +14,20 @@ exports.signUpPost = async (req, res) => {
       const salt = bcrypt.genSaltSync(10);
       const hash = bcrypt.hashSync(password, salt);
       await db.query(
-        `CREATE EXTENSION IF NOT EXISTS "uuid-ossp";INSERT INTO public.Users (email,password,name,phone,created_at) VALUES(${uuid_generate_v4()}${email},${hash},${name},${phone},${new Date()})`,
+        `CREATE EXTENSION IF NOT EXISTS "uuid-ossp";INSERT INTO public.Users (user_id,email,password,name,phone,created_at) VALUES(${uuid_generate_v4()},${email},${hash},${name},${phone},${new Date()})`,
         async (err, result) => {
           if (err) {
             console.log(err);
             return res.status(500).json({
               error: err.message,
             });
+
+          }
+
+          else{
+            return res.status(200).json({
+              message: "Account created successfully",
+            })
           }
           //   return res.status(200).json({
           //     message: "Account created successfully",
