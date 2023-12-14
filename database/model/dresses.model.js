@@ -44,7 +44,6 @@ const dressModel = (sequelize) => {
     gender: {
       type: DataTypes.STRING,
     },
-    
   });
 };
 module.exports = dressModel;
