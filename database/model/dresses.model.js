@@ -33,7 +33,7 @@ const dressModel = (sequelize) => {
     },
     image: {
       type: DataTypes.JSON,
-      defaultValue: [],
+      defaultValue: DataTypes.STRING,
     },
     price: {
       type: DataTypes.DECIMAL(10, 2),

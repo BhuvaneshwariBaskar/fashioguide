@@ -1,137 +1,105 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const db = require("../database/database");
+const { User } = require("../database/database");
 
 exports.signUpPost = async (req, res) => {
-  const { name, email, password, phone } = req.body;
-  await db.query(
-    `SELECT * FROM public.Users WHERE phone=${phone}`,
-    async (err, results) => {
-      if (results && results.length > 0)
-        return res.status(409).json({
-          error: "User already exists",
-        });
+  try {
+    const { name, email, password, phone } = req.body;
+    let user = await User.findOne({ where: { email }, raw: true });
+    let newUser;
+    if (user)
+      return res.status(500).json({
+        error: "User already exists",
+      });
+
+    else {
+      //User Creation
       const salt = bcrypt.genSaltSync(10);
       const hash = bcrypt.hashSync(password, salt);
-      await db.query(
-        `CREATE EXTENSION IF NOT EXISTS "uuid-ossp";INSERT INTO public.Users (user_id,email,password,name,phone,created_at) VALUES(${uuid_generate_v4()},${email},${hash},${name},${phone},${new Date()})`,
-        async (err, result) => {
-          if (err) {
-            console.log(err);
-            return res.status(500).json({
-              error: err.message,
-            });
-
-          }
-
-          else{
-            return res.status(200).json({
-              message: "Account created successfully",
-            })
-          }
-          //   return res.status(200).json({
-          //     message: "Account created successfully",
-          //   });
-
-        //   await db.query(
-        //     `SELECT * FROM public.Users WHERE user_id =${id}`,
-        //     async (err, results) => {
-        //       if (err) {
-        //         console.log(err);
-        //         return res.status(500).json({
-        //           error: err.message,
-        //         });
-        //       }
-
-        //       const user = results[0];
-        //       //   req.session.user = user;
-
-        //       const token = jwt.sign(
-        //         {
-        //           id: results[0].id,
-        //           username: results[0].username,
-        //           email: results[0].email,
-        //           mobileno: results[0].mobileno,
-        //           created_at: results[0].created_at,
-        //           updated_at: results[0].updated_at,
-        //           followed_artist: results[0].followed_artist,
-        //           history: results[0].history,
-        //         },
-        //         process.env.SECRET,
-        //         {
-        //           expiresIn: 604800,
-        //           // expiresIn:3000,
-        //         }
-        //       );
-        //       return res.json({
-        //         token: token,
-        //         ...user,
-        //       });
-        //     }
-        //   );
-        }
-      );
+       newUser = await User.create({ name, email, password:hash, phone });
+      console.log("User's auto-generated ID:", newUser.id);
+      // res
+      //   .status(201)
+      //   .json({ message: "User created successfully", user: newUser });
     }
-  );
+
+    const token = jwt.sign({
+      user_id: newUser.user_id, 
+      email: newUser.email,
+      password:newUser.password,
+      name: newUser.name,
+      address:newUser.address,
+      pincode:newUser.pincode,
+      profileimg:newUser.profileimg,
+      phone: newUser.phone,
+      gender:newUser.gender,
+      orderList:newUser.orderList,
+      wishlist:newUser.wishlist,
+      history:newUser.history,
+      recentSearchWords:newUser.recentSearchWords,
+      bag:newUser.bag,
+  }, process.env.SECRET, {
+      expiresIn: 1000 * 60 * 60 * 24 * 7 * 30
+  });
+  console.log(token);
+  return res.json({
+      token,message: "User created successfully",
+      ...newUser.dataValues
+      
+  });
+  } catch (error) {
+    console.error("Error creating user:", error);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
 };
 
-// LoginPost
+//LoginPost
 
-// exports.loginPost = async (req, res) => {
-//   const { mobileno, password } = req.body;
-//   await db.query(
-//     "SELECT * FROM user_table WHERE mobileno=?",
-//     [mobileno],
-//     async (err, results) => {
-//       if (err) {
-//         console.log(err);
-//         return res.status(500).json({
-//           error: "User not found",
-//         });
-//       }
-//       if (results.length === 0)
-//         return res.status(401).json({
-//           error: "Invalid email or password",
-//         });
-//       await db.query(
-//         "SELECT * FROM user_table WHERE user_id =?",
-//         [results[0].user_id],
-//         async (err, results) => {
-//           if (err) {
-//             console.log(err);
-//             return res.status(500).json({
-//               error: err.message,
-//             });
-//           }
+exports.loginPost = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    let user=await User.findOne({where:{email},raw:true});
+    if (!user) {
+      return res.status(401).json({
+        error:"Invalid Credentials"
+      });
+    }
+    else{
+      if (!bcrypt.compareSync(password, user.password)) {
+        return res.status(401).json({
+          error: "Invalid password",
+        });
+      }
+    }
+    const token = jwt.sign({
+      user_id: user.user_id, 
+      email: user.email,
+      password:user.password,
+      name: user.name,
+      address:user.address,
+      pincode:user.pincode,
+      profileimg:user.profileimg,
+      phone: user.phone,
+      gender:user.gender,
+      orderList:user.orderList,
+      wishlist:user.wishlist,
+      history:user.history,
+      recentSearchWords:user.recentSearchWords,
+      bag:user.bag,
+  }, process.env.SECRET, {
+      expiresIn: 1000 * 60 * 60 * 24 * 7 * 30
+  });
+  console.log(user);
+  
+  return res.json({
+      token,message: "Login successfull",
+      user
+      
+  });
+  } catch (error) {
+    return res.status(500).json({
+      error:"User Not Found"
+    });
+  }
 
-//           const user = results[0];
-//           if (!bcrypt.compareSync(password, user.password)) {
-//             return res.status(401).json({
-//               error: "Invalid password",
-//             });
-//           }
-//           const token = jwt.sign(
-//             {
-//               id: results[0].id,
-//               username: results[0].username,
-//               email: results[0].email,
-//               mobileno: results[0].mobileno,
-//               created_at: results[0].created_at,
-//               updated_at: results[0].updated_at,
-//               followed_artist: results[0].followed_artist,
-//               history: results[0].history,
-//             },
-//             process.env.SECRET,
-//             {
-//               expiresIn: 604800,
-//             }
-//           );
-//           return res.json({
-//             token: token,
-//             ...user,
-//           });
-//         }
-//       );
-//     }
-//   );
-// };
+};
