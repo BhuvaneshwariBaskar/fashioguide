@@ -8,12 +8,16 @@ import SingleCollection from './pages/SingleCollection';
 import Category from './pages/Category';
 import Cart from './pages/Cart';
 import Profile from './pages/Profile';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
   
 function App() {
   return (
     <BrowserRouter>
     <Routes>
     <Route path="/" element={<Home/>} />
+    <Route path="/signup" element={<Signup/>}/>
+    <Route path="/login" element={<Login/>}/>
     <Route path="/collections" element={<Collection/>}/>
     <Route path="/individual" element={<Individual/>}/>
     <Route path="/singlecollection" element={<SingleCollection/>}/>
