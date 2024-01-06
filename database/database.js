@@ -49,6 +49,9 @@ db.sequelize = sequelize;
 db.User = userModel(sequelize);
 db.Dress = dressModel(sequelize);
 db.Category = categoryModel(sequelize);
+
+//Don't Touch
+
 //Sync database
 
 // await sequelize.sync({ force: true });
