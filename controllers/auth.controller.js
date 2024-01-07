@@ -55,7 +55,7 @@ exports.signUpPost = async (req, res) => {
 
 //LoginPost
 
-exports.loginPost = async (req, res) => {
+exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
     let user=await User.findOne({where:{email},raw:true});

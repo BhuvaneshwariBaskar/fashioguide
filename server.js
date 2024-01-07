@@ -15,6 +15,7 @@ app.use(morgan("dev"));
 app.use(cors());
 
 app.use("/api", authRoute);
+
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
