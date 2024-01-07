@@ -2,23 +2,28 @@ import React ,{useState} from 'react';
 import { baseurl } from '../utils/category';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from "react-toastify";
+import { login } from '../axios/user.axios'
+import { useDispatch } from 'react-redux';
 
 const Login= () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const navigate = useNavigate();
   
     const handleLogin = async (e) => {
       e.preventDefault();
-      console.log(email);
-      axios.post(`${baseurl}/loginPost`, {
-        email: email,
-        password: password,
-      }).then((res) => {
-        console.log(res.data[0]);
-        navigate('/home');
-      }).catch((err) => {
-        console.log(err);
+      login(email,password).then((res)=>{
+        if(res.data && res.data.token){
+          setEmail("");
+          setPassword("");
+          toast.success("Succesfully created account")
+          dispatchEvent({
+            type:"CREATE_USER",
+            payload:res.data
+          })
+          navigate("/");
+        }
       })
     };
   return (
