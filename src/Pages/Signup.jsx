@@ -1,19 +1,33 @@
-import React,{useState,useEffect}from 'react';
-import { Link } from 'react-router-dom';
+import React,{useState}from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { signup } from '../axios/user.axios';
+import { toast } from "react-toastify";
+import { useDispatch } from 'react-redux';
+
 
 const Signup= () => {
+  const navigate=useNavigate();
+  const dispatch=useDispatch();
  const [email, setEmail] = useState("");
  const [name, setName] = useState("");
  const [password, setPassword] = useState("");
  const [phone, setPhone] = useState("");
- 
  const handleSubmit=(e)=>{
     e.preventDefault();
-    console.log(email,name,password,phone);
-    // signup(email,name,password,phone).then((res)=>{
-    //     console.log(res);
-    // })
+    signup(email,name,password,phone).then((res)=>{
+        if(res.data && res.data.token){
+          setEmail("");
+          setName("");
+          setPassword("");
+          setPhone("");
+          toast.success("Successfully account created");
+          dispatch({
+            type:"CREATE_USER",
+            payload:res.data
+          })
+          navigate("/");
+        }
+    })
  }
 
   return (
@@ -102,7 +116,7 @@ const Signup= () => {
               {/* Sign In Button */}
               <button
                 type="submit"
-                onSubmit={(e)=>handleSubmit(e)}
+                onClick={(e)=>handleSubmit(e)}
                 className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               >
                 Sign up
