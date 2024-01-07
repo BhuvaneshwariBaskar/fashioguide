@@ -48,7 +48,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 db.User = userModel(sequelize);
 db.Dress = dressModel(sequelize);
-db.Category = categoryModel(sequelize);
+// db.Category = categoryModel(sequelize);
 
 //Don't Touch
 
