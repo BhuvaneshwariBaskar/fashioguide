@@ -3,12 +3,11 @@ import { baseurl } from '../utils/category';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from "react-toastify";
-import { login } from '../axios/user.axios'
-import { useDispatch } from 'react-redux';
+import { login } from '../axios/user.axios';
 
 const Login= () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const navigate = useNavigate();
   
     const handleLogin = async (e) => {
@@ -17,7 +16,7 @@ const Login= () => {
         if(res.data && res.data.token){
           setEmail("");
           setPassword("");
-          toast.success("Succesfully created account")
+          toast.success("succesfully account created");
           dispatchEvent({
             type:"CREATE_USER",
             payload:res.data
