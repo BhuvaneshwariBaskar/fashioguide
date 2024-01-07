@@ -9,10 +9,7 @@ const categoryModel = (sequelize) => {
       primaryKey: true,
       allowNull: false,
     },
-    category_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+   
   });
 };
 module.exports = categoryModel ;

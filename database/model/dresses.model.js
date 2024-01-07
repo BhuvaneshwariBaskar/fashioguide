@@ -16,13 +16,9 @@ const dressModel = (sequelize) => {
       allowNull: false,
     },
 
-    category_id: {
-      type: DataTypes.UUID,
+    category_name: {
+      type: DataTypes.STRING,
       allowNull: false,
-      references: {
-          model: 'Categories', // This is the name of the target model (case-sensitive)
-          key: 'category_id'
-      }
     },
     brand: {
       type: DataTypes.STRING,
