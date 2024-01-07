@@ -10,14 +10,12 @@ const authRoute = require("./routes/auth.routes");
 
 const app = express();
 app.use(express.json());
-db();
 
 app.use(morgan("dev"));
 app.use(cors());
 
 app.use("/api", authRoute);
-app.post("/register",authRoute);
-app.post("/loginPost",authRoute);
+
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });

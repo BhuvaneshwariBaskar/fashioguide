@@ -37,9 +37,7 @@ const userModel = (sequelize) => {
       },
       phone: {
         type: DataTypes.STRING,
-        validate: {
-            min: 13, max: 13
-        },
+        allowNull: false,
       },
       gender: {
         type: DataTypes.STRING,
