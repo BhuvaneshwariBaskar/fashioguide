@@ -63,3 +63,4 @@ export const Category = [
         dresses:["4601","4602"]
     }
 ]
+export const baseurl = "http://localhost:8080"
