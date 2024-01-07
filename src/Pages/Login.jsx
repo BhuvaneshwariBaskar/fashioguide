@@ -1,23 +1,22 @@
 import React ,{useState} from 'react';
-import { baseurl } from '../utils/category';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { toast } from "react-toastify";
 import { login } from '../axios/user.axios';
+import { useDispatch } from 'react-redux';
 
 const Login= () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-  
+    const dispatch=useDispatch();
     const handleLogin = async (e) => {
       e.preventDefault();
       login(email,password).then((res)=>{
         if(res.data && res.data.token){
           setEmail("");
           setPassword("");
-          toast.success("succesfully account created");
-          dispatchEvent({
+          toast.success("Login successful");
+          dispatch({
             type:"CREATE_USER",
             payload:res.data
           })
@@ -47,7 +46,7 @@ const Login= () => {
                   id="email"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="name@company.com"
-                  value={email}
+                  // value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
@@ -62,14 +61,14 @@ const Login= () => {
                   id="password"
                   placeholder="••••••••"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  value={password}
+                  // value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
               </div>
                
               {/* Remember me checkbox and Forgot password link */}
-              <div className="flex items-center justify-between">
+              {/* <div className="flex items-center justify-between">
                 <div className="flex items-start">
                   <div className="flex items-center h-5">
                     <input
@@ -85,7 +84,7 @@ const Login= () => {
                   </div>
                 </div>
                 <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
-              </div>
+              </div> */}
               {/* Sign In Button */}
               <button
                 type="submit"
