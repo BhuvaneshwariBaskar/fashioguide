@@ -1,7 +1,7 @@
 const Dress = [
   {
     dress_name: "Checked Polo T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -12,7 +12,7 @@ const Dress = [
   },
   {
     dress_name: "Heathered Crew-Neck T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "performax",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -23,18 +23,18 @@ const Dress = [
   },
   {
     dress_name: "Fastdry Active Crew-Neck T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "performax",
     size: ["XS", "S", "M", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20220125/5ENA/61eef659aeb2695cdd2acad3/-286Wx359H-441128501-jetblack-MODEL.jpg",
-    price: 1499,
+    price: 499,
     rating: 5,
     gender: "Men",
   },
   {
     dress_name: "Heathered Crew-Neck T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -43,10 +43,9 @@ const Dress = [
     rating: 5,
     gender: "Men",
   },
-
   {
     dress_name: "Leaf Print Polo T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "netplay",
     size: ["XS", "S", "M"],
     image:
@@ -57,7 +56,7 @@ const Dress = [
   },
   {
     dress_name: "Heathered Polo T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "teamspirit",
     size: ["XS", "S", "L", "XL"],
     image:
@@ -68,7 +67,7 @@ const Dress = [
   },
   {
     dress_name: "Crew-Neck T-shirt with Brand Icon",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "puma",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -79,9 +78,9 @@ const Dress = [
   },
   {
     dress_name: "Striped Polo T-shirt with Ribbed Hems",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "netplay",
-    size: ["XS", "S", "M", "L", "XL"],
+    size: ["XS", "M", "L", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210225/Q90z/6037be57f997dd5c40fbf0bf/-286Wx359H-441120075-navy-MODEL.jpg",
     price: 899,
@@ -90,18 +89,18 @@ const Dress = [
   },
   {
     dress_name: "Core Varsity Polo T-shirt with Contrast Tipping",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211019/U4It/616dda2eaeb26901109a9256/-286Wx359H-441113673-navy-MODEL.jpg",
-    price: 1499,
+    price: 499,
     rating: 4,
     gender: "Men",
   },
   {
     dress_name: "Striped Button-Down T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -112,18 +111,18 @@ const Dress = [
   },
   {
     dress_name: "Polo T-shirt with Signature Branding",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "dnmx",
     size: ["XS", "S", "M"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/hdd/h04/10247919534110/-286Wx359H-440762638-turquoise-OUTFIT.jpg",
-    price: 1499,
+    price: 499,
     rating: 5,
     gender: "Men",
   },
   {
     dress_name: "Jacquard-Woven Slim Fit Polo T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -134,18 +133,18 @@ const Dress = [
   },
   {
     dress_name: "Core Rib V-Neck T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "teamspirit",
     size: ["XS", "S", "M"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20220429/T2dg/626af683aeb26921af49a0c7/-286Wx359H-441113102-jetblack-MODEL.jpg",
-    price: 1499,
+    price: 499,
     rating: 5,
     gender: "Men",
   },
   {
     dress_name: "Ombre-Dyed Henley T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "campus-sutra",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -156,18 +155,18 @@ const Dress = [
   },
   {
     dress_name: "Polo T-shirt with Signature Branding",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "dnmx",
     size: ["XS", "S", "M"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/he4/h8c/10247893057566/-286Wx359H-440762638-offwhite-OUTFIT.jpg",
-    price: 1499,
+    price: 499,
     rating: 5,
     gender: "Men",
   },
   {
     dress_name: "Slim Fit Polo T-shirt with Contrast Tipping",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "netplay",
     size: ["XS", "L", "XL"],
     image:
@@ -178,18 +177,18 @@ const Dress = [
   },
   {
     dress_name: "Typographic Print Crew-Neck T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210731/NfDJ/61044965aeb269a9e35b76e6/-286Wx359H-441123101-grey-MODEL.jpg",
-    price: 1499,
+    price: 499,
     rating: 5,
     gender: "Men",
   },
   {
     dress_name: "Slim Fit Polo T-shirt with Cut & Sew Panels",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "teamspirit",
     size: ["XS", "XL"],
     image:
@@ -200,7 +199,7 @@ const Dress = [
   },
   {
     dress_name: "Brand Print Ombre Crew-Neck T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -211,7 +210,7 @@ const Dress = [
   },
   {
     dress_name: "Graphic Print Crew-Neck T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "puma",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -222,18 +221,18 @@ const Dress = [
   },
   {
     dress_name: "Core Varsity Polo T-shirt with Contrast Tipping",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "teamspirit",
     size: ["XS", "S", "M"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210907/RUuG/61368478f997ddce89be383b/-286Wx359H-441113673-pink-MODEL.jpg",
-    price: 1499,
+    price: 499,
     rating: 3,
     gender: "Men",
   },
   {
     dress_name: "Reflective Colourblock Crew-Neck T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -244,7 +243,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Polo T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L"],
     image:
@@ -255,7 +254,7 @@ const Dress = [
   },
   {
     dress_name: "Crew-Neck T-shirt with Contrast Stripes",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "ausk",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -266,7 +265,7 @@ const Dress = [
   },
   {
     dress_name: "Striped Polo T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L"],
     image:
@@ -277,7 +276,7 @@ const Dress = [
   },
   {
     dress_name: "Crew-Neck T-shirt with Thumbhole Sleeves",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -288,7 +287,7 @@ const Dress = [
   },
   {
     dress_name: "Crew-Neck T-shirt with Brand Icon",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "puma",
     size: ["S", "M", "L", "XL"],
     image:
@@ -299,18 +298,18 @@ const Dress = [
   },
   {
     dress_name: "Fastdry Active Crew-Neck T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "performax",
-    size: ["M", "L", "XL"],
+    size: '["M", "L", "XL"]',
     image:
       "https://assets.ajio.com/medias/sys_master/root/20220126/bb1Z/61f048fdf997dd66233c6c5d/-286Wx359H-441128501-offwhite-MODEL.jpg",
-    price: 1499,
+    price: 499,
     rating: 5,
     gender: "Men",
   },
   {
     dress_name: "Striped Crew-Neck T-shirt",
-    category_id: "64047e54-1d0b-44bc-8e27-891cc1852edb",
+    category_name: "T-shirt",
     brand: "dnmx",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -321,7 +320,7 @@ const Dress = [
   },
   {
     dress_name: "Tapered Fit Flat-Front Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -332,7 +331,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Flat-Front Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "netplay",
     size: ["XS", "S", "M"],
     image:
@@ -343,7 +342,7 @@ const Dress = [
   },
   {
     dress_name: "Tapered Fit Flat-Front Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "netplay",
     size: ["XS", "S", "L", "XL"],
     image:
@@ -354,7 +353,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Flat-Front Trousers with Insert Pockets",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "john-players",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -365,7 +364,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Flat Front Trousers with Insert Pockets",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "john-players",
     size: ["XS", "S", "M"],
     image:
@@ -376,7 +375,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Flat-Front Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "netplay",
     size: ["XS", "L", "XL"],
     image:
@@ -387,9 +386,9 @@ const Dress = [
   },
   {
     dress_name: "Flat-Front Trousers with Insert Pockets",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "john-players",
-    size: ["M", "L", "XL"],
+    size: '[ "S", "M", "L"]',
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210810/9kux/61117d7aaeb269a2686c92f8/-286Wx359H-441122675-grey-MODEL.jpg",
     price: 1499,
@@ -398,7 +397,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Flat-Front Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "netplay",
     size: ["XS", "S", "M", "L"],
     image:
@@ -409,7 +408,7 @@ const Dress = [
   },
   {
     dress_name: "Checked Slim Fit Flat-Front Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "mchenry",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -420,7 +419,7 @@ const Dress = [
   },
   {
     dress_name: "Pack of 2 Flat-Front Relaxed Fit Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "netplay",
     size: ["S", "M", "L", "XL"],
     image:
@@ -431,7 +430,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Flat-Front Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "john-players",
     size: ["XS", "S", "M", "L"],
     image:
@@ -442,7 +441,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Flat Front Trousers with Insert Pockets",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "john-players",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -453,7 +452,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Flat-Front Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "mchenry",
     size: ["XS", "S", "M", "L"],
     image:
@@ -464,18 +463,18 @@ const Dress = [
   },
   {
     dress_name: "Mid-Rise Straight Fit Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20220117/jblK/61e51bc4aeb2695cdd1782c6/-286Wx359H-461682459-beige-MODEL.jpg",
-    price: 1499,
+    price: 2499,
     rating: 5,
     gender: "Men",
   },
   {
     dress_name: "Slim Fit Flat-Front Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "netplay",
     size: ["XS", "S", "XL"],
     image:
@@ -486,7 +485,7 @@ const Dress = [
   },
   {
     dress_name: "Checked Flat-Front Trousers with Insert Pockets",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -497,7 +496,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Flat-Front Trousers with Insert Pockets",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "netplay",
     size: ["XS", "S", "M", "XL"],
     image:
@@ -508,7 +507,7 @@ const Dress = [
   },
   {
     dress_name: "Checked Slim Fit Flat-Front Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "ketch",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -519,9 +518,9 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Flat-Front Chino Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "netplay",
-    size: ["S", "M", "XL"],
+    size: '["S", "M", "XL"]',
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211029/Qcex/617b2d02aeb2690110b09439/-286Wx359H-469034697-multi-MODEL.jpg",
     price: 1649,
@@ -530,7 +529,7 @@ const Dress = [
   },
   {
     dress_name: "Heathered Slim Fit Flat-Front Trousers",
-    category_id: "076cdc6a-00b2-4517-8f69-a5e9f6a3948a",
+    category_name: "Trousers",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -541,7 +540,7 @@ const Dress = [
   },
   {
     dress_name: "Leaf Print Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L"],
     image:
@@ -552,7 +551,7 @@ const Dress = [
   },
   {
     dress_name: "Striped Slim Fit Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -563,7 +562,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "dennislingo-premium-attire",
     size: ["XS", "S", "M"],
     image:
@@ -574,7 +573,7 @@ const Dress = [
   },
   {
     dress_name: "Checked Slim Fit Shirt with Welt Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "the-indian-garage-co",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -585,7 +584,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Shirt with Spread Collar",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "dennislingo-premium-attire",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -596,7 +595,7 @@ const Dress = [
   },
   {
     dress_name: "Checked Cotton Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "netplay",
     size: ["XS", "S", "XL"],
     image:
@@ -607,7 +606,7 @@ const Dress = [
   },
   {
     dress_name: "Cotton Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L"],
     image:
@@ -618,7 +617,7 @@ const Dress = [
   },
   {
     dress_name: "Checked Slim Fit Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "the-indian-garage-co",
     size: ["XS", "S", "M"],
     image:
@@ -629,7 +628,7 @@ const Dress = [
   },
   {
     dress_name: "Geometric Print Slim Fit Shirt",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "the-indian-garage-co",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -640,7 +639,7 @@ const Dress = [
   },
   {
     dress_name: "Cotton Shirt with Flap Pockets",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "lee-cooper",
     size: ["XS", "S", "XL"],
     image:
@@ -651,7 +650,7 @@ const Dress = [
   },
   {
     dress_name: "Cotton Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -662,18 +661,18 @@ const Dress = [
   },
   {
     dress_name: "Denim Slim Fit Shirt with Flap Pockets",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "dennislingo-premium-attire",
     size: ["XS", "S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210403/dKML/6068678df997dd7b645d965e/-286Wx359H-461117395-blue-MODEL.jpg",
-    price: 1499,
+    price: 2499,
     rating: 5,
     gender: "Men",
   },
   {
     dress_name: "Slim Fit Shirt with Band Collar",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "dennislingo-premium-attire",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -684,7 +683,7 @@ const Dress = [
   },
   {
     dress_name: "Cotton Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L"],
     image:
@@ -695,7 +694,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "dennislingo-premium-attire",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -706,7 +705,7 @@ const Dress = [
   },
   {
     dress_name: "Classic Slim Fit Shirt with Full Sleeves",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "dennislingo-premium-attire",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -717,7 +716,7 @@ const Dress = [
   },
   {
     dress_name: "Slim Fit Checked Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "the-indian-garage-co",
     size: ["XS", "S", "XL"],
     image:
@@ -728,7 +727,7 @@ const Dress = [
   },
   {
     dress_name: "Striped Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -739,7 +738,7 @@ const Dress = [
   },
   {
     dress_name: "Printed Cotton Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L"],
     image:
@@ -750,7 +749,7 @@ const Dress = [
   },
   {
     dress_name: "Checked Shirt with Patch Pocket",
-    category_id: "67181b41-d1e7-432c-ac7b-998540ee2ceb",
+    category_name: "Shirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -761,7 +760,7 @@ const Dress = [
   },
   {
     dress_name: "Lightly Washed Skinny Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "john-players-jeans",
     size: ["XS", "S", "XL"],
     image:
@@ -772,7 +771,7 @@ const Dress = [
   },
   {
     dress_name: "Mid-Rise Slim Fit Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "levis",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -783,7 +782,7 @@ const Dress = [
   },
   {
     dress_name: "Skinny Fit Mid-Rise Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "john-players-jeans",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -794,18 +793,18 @@ const Dress = [
   },
   {
     dress_name: "Mid Wash Slim Fit Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "levis",
     size: ["XS", "S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211005/nc3V/615c2ed4aeb2692b85adf61d/-286Wx359H-460977751-blue-MODEL.jpg",
-    price: 1499,
+    price: 2499,
     rating: 5,
     gender: "Men",
   },
   {
     dress_name: "Mid-Rise Skinny Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "dnmx",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -816,7 +815,7 @@ const Dress = [
   },
   {
     dress_name: "Lightly Washed Slim Fit Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "lee-cooper",
     size: ["XS", "S", "M", "L"],
     image:
@@ -827,7 +826,7 @@ const Dress = [
   },
   {
     dress_name: "Mid-Wash Mid-Rise 5-Pocket Slim Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "u-s-polo-assn-",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -838,7 +837,7 @@ const Dress = [
   },
   {
     dress_name: "Washed Slim Fit Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "john-players-jeans",
     size: ["XS", "S", "M"],
     image:
@@ -849,7 +848,7 @@ const Dress = [
   },
   {
     dress_name: "Mid-Wash Mid-Rise Skinny Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "john-players-jeans",
     size: ["XS", "S", "M", "L"],
     image:
@@ -860,7 +859,7 @@ const Dress = [
   },
   {
     dress_name: "Mid-Rise Slim Fit Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "levis",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -871,7 +870,7 @@ const Dress = [
   },
   {
     dress_name: "Mid-Rise Slim Fit Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "dnmx",
     size: ["XS", "S", "M"],
     image:
@@ -882,7 +881,7 @@ const Dress = [
   },
   {
     dress_name: "513 Straight Fit Washed Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "levis",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -893,7 +892,7 @@ const Dress = [
   },
   {
     dress_name: "Mid-Rise Straight Fit Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "lee-cooper",
     size: ["XS", "S", "M", "L"],
     image:
@@ -904,7 +903,7 @@ const Dress = [
   },
   {
     dress_name: "Washed Slim Fit Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "levis",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -915,7 +914,7 @@ const Dress = [
   },
   {
     dress_name: "Lightly Washed Slim Fit Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "lee-cooper",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -926,7 +925,7 @@ const Dress = [
   },
   {
     dress_name: "Mid-Rise Slim Fit Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "lee-cooper",
     size: ["XS", "S", "M", "L"],
     image:
@@ -937,7 +936,7 @@ const Dress = [
   },
   {
     dress_name: "Heavily Washed Skinny Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "john-players-jeans",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -948,7 +947,7 @@ const Dress = [
   },
   {
     dress_name: "Mid-Wash Straight Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "lee-cooper",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -959,7 +958,7 @@ const Dress = [
   },
   {
     dress_name: "Light-Wash Skinny Fit Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "dnmx",
     size: ["XS", "S", "M"],
     image:
@@ -970,7 +969,7 @@ const Dress = [
   },
   {
     dress_name: "Washed Slim Fit Jeans",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Jeans",
     brand: "levis",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -981,7 +980,7 @@ const Dress = [
   },
   {
     dress_name: "CL Oversized Crew-Neck Sweatshirt",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "superdry",
     size: ["XS", "S", "M"],
     image:
@@ -992,7 +991,7 @@ const Dress = [
   },
   {
     dress_name: "Brand Print Crew-Neck Sweatshirt with Drop-Shoulder Sleeves",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "levis",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1003,18 +1002,18 @@ const Dress = [
   },
   {
     dress_name: "Typographic Print Crew-Neck Sweatshirt",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "dnmx",
     size: ["XS", "S", "M", "L", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210727/eRge/60ff3c36f997ddb312395e0f/-286Wx359H-441120878-pink-MODEL.jpg",
-    price: 1499,
+    price: 499,
     rating: 5,
     gender: "Women",
   },
   {
     dress_name: "Colour-Block Round-Neck Sweatshirt",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "popster",
     size: ["XS", "S", "M"],
     image:
@@ -1025,7 +1024,7 @@ const Dress = [
   },
   {
     dress_name: "Typographic Sweatshirt With Kangaroo Pockets",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "dillinger",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1036,7 +1035,7 @@ const Dress = [
   },
   {
     dress_name: "Zip-Front Sweatshirt with Brand Icon",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "puma",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1047,7 +1046,7 @@ const Dress = [
   },
   {
     dress_name: "Heathered Sweatshirt with Short Zip-Placket",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "performax",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1058,7 +1057,7 @@ const Dress = [
   },
   {
     dress_name: "Typographic Print Crew-Neck Sweatshirt with Lace Panels",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "rio",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1069,7 +1068,7 @@ const Dress = [
   },
   {
     dress_name: "Typographic Print Crew-Neck Sweatshirt",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "levis",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1080,7 +1079,7 @@ const Dress = [
   },
   {
     dress_name: "Polka-Dot Print Sweatshirt with Tie-Up",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "ginger-by-lifestyle",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1091,7 +1090,7 @@ const Dress = [
   },
   {
     dress_name: "Hooded Sweatshirt with Front Zip Closure",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "instafab-plus",
     size: ["XS", "S", "XL"],
     image:
@@ -1102,7 +1101,7 @@ const Dress = [
   },
   {
     dress_name: "Daisy Print Sweatshirt with Ripped Hems",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "kazo",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1113,7 +1112,7 @@ const Dress = [
   },
   {
     dress_name: "Typographic Print Crew-Neck Sweatshirt",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "zivame",
     size: ["XS", "S", "M"],
     image:
@@ -1124,7 +1123,7 @@ const Dress = [
   },
   {
     dress_name: "Graphic Print Hooded Sweatshirt",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "dnmx",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1135,7 +1134,7 @@ const Dress = [
   },
   {
     dress_name: "Typographic Sweatshirt With Kangaroo Pockets",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "dillinger",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1146,7 +1145,7 @@ const Dress = [
   },
   {
     dress_name: "Graphic Print Round-Neck Sweatshirt",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "ginger-by-lifestyle",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1157,7 +1156,7 @@ const Dress = [
   },
   {
     dress_name: "T & F Logo Print Crew-Neck Sweatshirt",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "superdry",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1168,7 +1167,7 @@ const Dress = [
   },
   {
     dress_name: "Merlyn Animal Print Heathered Sweatshirt",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "denizen-womens",
     size: ["XS", "S", "XL"],
     image:
@@ -1179,7 +1178,7 @@ const Dress = [
   },
   {
     dress_name: "Embellished Hooded Sweatshirt",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "dnmx",
     size: ["XS", "S", "M"],
     image:
@@ -1190,7 +1189,7 @@ const Dress = [
   },
   {
     dress_name: "Checked Sweatshirt with Puff Sleeves",
-    category_id: "7e020228-368a-4df1-b71d-751d82c013fd",
+    category_name: "Sweatshirt",
     brand: "fig",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1201,7 +1200,7 @@ const Dress = [
   },
   {
     dress_name: "Maternity Cami Top",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c4",
+    category_name: "Top",
     brand: "mothercare",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1212,7 +1211,7 @@ const Dress = [
   },
   {
     dress_name: "Women Floral Halter-Neck Top",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c5",
+    category_name: "Top",
     brand: "outryt",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1223,7 +1222,7 @@ const Dress = [
   },
   {
     dress_name: "Colourblock Ribbed Top with Raglan Sleeves",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c6",
+    category_name: "Top",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1234,7 +1233,7 @@ const Dress = [
   },
   {
     dress_name: "Lace High-Neck Top",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c7",
+    category_name: "Top",
     brand: "kraus",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1245,7 +1244,7 @@ const Dress = [
   },
   {
     dress_name: "Lace Round-Neck Top",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c8",
+    category_name: "Top",
     brand: "fig",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1256,7 +1255,7 @@ const Dress = [
   },
   {
     dress_name: "Leaf Print V-neck Fitted Top",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c9",
+    category_name: "Top",
     brand: "iscenery-by-vero-moda",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1267,7 +1266,7 @@ const Dress = [
   },
   {
     dress_name: "Micro Print Top with Tie-Up Neckline",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c10",
+    category_name: "Top",
     brand: "fig",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1278,7 +1277,7 @@ const Dress = [
   },
   {
     dress_name: "Ribbed Round-Neck Top",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c11",
+    category_name: "Top",
     brand: "jdy-by-only",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1289,7 +1288,7 @@ const Dress = [
   },
   {
     dress_name: "Lace Top with Raglan Sleeves",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c12",
+    category_name: "Top",
     brand: "fig",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1300,7 +1299,7 @@ const Dress = [
   },
   {
     dress_name: "Numeric-Schiffli Round-Neck Twofer Top",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c13",
+    category_name: "Top",
     brand: "teamspirit",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1311,7 +1310,7 @@ const Dress = [
   },
   {
     dress_name: "Geometric Print Twofer Top",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c14",
+    category_name: "Top",
     brand: "fig",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1322,7 +1321,7 @@ const Dress = [
   },
   {
     dress_name: "Button-Down Shirt Top with Band-Collar",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c15",
+    category_name: "Top",
     brand: "levis",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1333,18 +1332,18 @@ const Dress = [
   },
   {
     dress_name: "Solid Collar Neck Regular Top",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c16",
+    category_name: "Top",
     brand: "draax-fashions",
     size: ["XS", "S", "M", "L", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211001/2VqU/6156fef7f997ddce89eb631d/-286Wx359H-463041194-green-MODEL.jpg",
-    price: "2,200",
+    price: 2200,
     rating: 5,
     gender: "Women",
   },
   {
     dress_name: "Ribbed Round-Neck Top with Puff Sleeves",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c17",
+    category_name: "Top",
     brand: "rio",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1355,7 +1354,7 @@ const Dress = [
   },
   {
     dress_name: "Printed Button-Front Top",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c18",
+    category_name: "Top",
     brand: "rio",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1366,7 +1365,7 @@ const Dress = [
   },
   {
     dress_name: "Ribbed Scoop-Neck Thermal Top",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c19",
+    category_name: "Top",
     brand: "urban-hug",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1377,7 +1376,7 @@ const Dress = [
   },
   {
     dress_name: "V-Neck Top with Puffed Sleeves",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c20",
+    category_name: "Top",
     brand: "vero-moda",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1388,7 +1387,7 @@ const Dress = [
   },
   {
     dress_name: "Block Print Top with Roll-Up Sleeves",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c21",
+    category_name: "Top",
     brand: "divena",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1399,7 +1398,7 @@ const Dress = [
   },
   {
     dress_name: "Floral Print Boat-Neck Top",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c22",
+    category_name: "Top",
     brand: "iscenery-by-vero-moda",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1410,7 +1409,7 @@ const Dress = [
   },
   {
     dress_name: "Tiered Top with Tie-Up Neckline",
-    category_id: "c036f943-194c-4580-95a0-f0e79fe333c23",
+    category_name: "Top",
     brand: "dnmx",
     size: ["XS", "S", "M"],
     image:
@@ -1421,7 +1420,7 @@ const Dress = [
   },
   {
     dress_name: "Embellished Anarkali Kurta",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c9",
+    category_name: "Kurta",
     brand: "kvs-fab",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1432,9 +1431,9 @@ const Dress = [
   },
   {
     dress_name: "Embroidered Straight Kurta Set with Dupatta",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c10",
+    category_name: "Kurta",
     brand: "shewill",
-    size: ["M", "L", "XL"],
+    size: '[ "S", "M", "L"]',
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211005/5558/615b9aabaeb2692b85a59ded/-286Wx359H-463058975-cream-MODEL.jpg",
     price: 4299,
@@ -1443,40 +1442,40 @@ const Dress = [
   },
   {
     dress_name: "Embroidered Straight Kurta Set with Dupatta",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c11",
+    category_name: "Kurta",
     brand: "shewill",
     size: ["XS", "S", "M", "L", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211005/N6iQ/615b9c1ef997ddce89f7a670/-286Wx359H-463058977-green-MODEL.jpg",
-    price:  3212,
+    price: 3212,
     rating: 5,
     gender: "Women",
   },
   {
     dress_name: "Indian Straight Kurta Set",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c12",
+    category_name: "Kurta",
     brand: "shewill",
     size: ["S", "M", "L", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211005/WZ2a/615bee7df997ddce89fce404/-286Wx359H-463058781-beige-MODEL.jpg",
-    price:  3212,
+    price: 3212,
     rating: 5,
     gender: "Women",
   },
   {
     dress_name: "Embellished A-line Kurta Sets",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c13",
+    category_name: "Kurta",
     brand: "gulmohar-jaipur",
     size: ["XS", "S", "M"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20220117/ig1s/61e55e95f997dd662324fdd6/-286Wx359H-463669997-navy-MODEL.jpg",
-    price:  3212,
+    price: 3212,
     rating: 3,
     gender: "Women",
   },
   {
     dress_name: "Embroidered Flared Kurta",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c14",
+    category_name: "Kurta",
     brand: "kimayra",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1487,7 +1486,7 @@ const Dress = [
   },
   {
     dress_name: "Embroidered Straight Kurta Set with Dupatta",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c15",
+    category_name: "Kurta",
     brand: "shewill",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1498,18 +1497,18 @@ const Dress = [
   },
   {
     dress_name: "Floral Printed Straight Kurta Set",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c16",
+    category_name: "Kurta",
     brand: "gulmohar-jaipur",
     size: ["XS", "S", "M", "L", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20220124/8ATC/61eeae7af997dd662337bae2/-286Wx359H-463263507-yellow-MODEL.jpg",
-    price:  3212,
+    price: 3212,
     rating: 5,
     gender: "Women",
   },
   {
     dress_name: "Jaipuri Print Angrakha Kurta with Tie-Up",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c17",
+    category_name: "Kurta",
     brand: "avaasa-mix-n-match",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1520,7 +1519,7 @@ const Dress = [
   },
   {
     dress_name: "Embroidered Sleeveless A-line Kurta with Dipped Hemline",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c18",
+    category_name: "Kurta",
     brand: "avaasa-mix-n-match",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1531,29 +1530,29 @@ const Dress = [
   },
   {
     dress_name: "Floral Print Straight Kurta Set",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c19",
+    category_name: "Kurta",
     brand: "kurtipedia",
     size: ["XS", "S", "M", "L", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210701/HhQ0/60dce948f997ddb312165aa8/-286Wx359H-462576649-maroon-MODEL.jpg",
-    price: 1499,
+    price: 3499,
     rating: 4,
     gender: "Women",
   },
   {
     dress_name: "Floral Print Straight Kurta Set",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c20",
+    category_name: "Kurta",
     brand: "gulmohar-jaipur",
     size: ["XS", "S", "M", "L", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20220124/IYjE/61eeadd8f997dd662337b153/-286Wx359H-463136342-maroon-MODEL.jpg",
-    price: 1499,
+    price: 2499,
     rating: 5,
     gender: "Women",
   },
   {
     dress_name: "Woven Sleeveless Kurta with High-Low Hemline",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c21",
+    category_name: "Kurta",
     brand: "avaasa-mix-n-match",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1564,7 +1563,7 @@ const Dress = [
   },
   {
     dress_name: "Block Print Buton-Down Straight Kurta",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c22",
+    category_name: "Kurta",
     brand: "avaasa-mix-n-match",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1575,7 +1574,7 @@ const Dress = [
   },
   {
     dress_name: "Floral Print Sleeveless Flared Kurta with Godet",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c23",
+    category_name: "Kurta",
     brand: "avaasa-mix-n-match",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1586,7 +1585,7 @@ const Dress = [
   },
   {
     dress_name: "Floral Print Straight Kurta Set",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c24",
+    category_name: "Kurta",
     brand: "prakhya",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1597,7 +1596,7 @@ const Dress = [
   },
   {
     dress_name: "Floral Embroidered Straight Kurta",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c25",
+    category_name: "Kurta",
     brand: "avaasa-mix-n-match",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1608,7 +1607,7 @@ const Dress = [
   },
   {
     dress_name: "Floral Print Round-Neck Straight Kurta",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c26",
+    category_name: "Kurta",
     brand: "four-seasons",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1619,20 +1618,19 @@ const Dress = [
   },
   {
     dress_name: "Floral Print Flared Kurta",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c27",
+    category_name: "Kurta",
     brand: "avaasa-mix-n-match",
     size: ["XS", "S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210614/lz58/60c7774daeb269a9e3e710f4/-286Wx359H-441124095-red-MODEL.jpg",
-    price: 4330,
     rating: 5,
     gender: "Women",
   },
   {
     dress_name: "Minnie Print Crew-Neck Sweatshirt",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c9",
+    category_name: "T-shirt",
     brand: "dnmx",
-    size: ["M", "L", "XL"],
+    size: '[ "S", "M", "L"]',
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211006/1wGN/615dba87aeb2692b85b1ea9e/-286Wx359H-441128815-darkgrey-MODEL.jpg",
     price: 599,
@@ -1641,7 +1639,7 @@ const Dress = [
   },
   {
     dress_name: "Tshirt mint xs",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c10",
+    category_name: "T-shirt",
     brand: "fig",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1652,7 +1650,7 @@ const Dress = [
   },
   {
     dress_name: "Vero women tshirts white s",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c11",
+    category_name: "T-shirt",
     brand: "vero-moda",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1663,7 +1661,7 @@ const Dress = [
   },
   {
     dress_name: "Crew-Neck Panelled Slim T-shirt with Drop-Shoulder Sleeves",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c12",
+    category_name: "T-shirt",
     brand: "trendyol",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1674,9 +1672,9 @@ const Dress = [
   },
   {
     dress_name: "Graphic Print Crew-Neck Tshirt",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c13",
+    category_name: "T-shirt",
     brand: "quarantine",
-    size: ["M", "L", "XL"],
+    size: '[ "S", "M", "L"]',
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211116/ndN5/6193ee8daeb2690110c80218/-286Wx359H-463323070-green-MODEL.jpg",
     price: 1399,
@@ -1685,7 +1683,7 @@ const Dress = [
   },
   {
     dress_name: "Typographic Printed Crew-Neck Tshirts",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c14",
+    category_name: "T-shirt",
     brand: "quarantine",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1696,7 +1694,7 @@ const Dress = [
   },
   {
     dress_name: "Typographic Print Round-Neck Tshirts",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c15",
+    category_name: "T-shirt",
     brand: "quarantine",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1707,9 +1705,9 @@ const Dress = [
   },
   {
     dress_name: "Typographic Print Round-Neck Tshirts",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c16",
+    category_name: "T-shirt",
     brand: "quarantine",
-    size: ["M", "L", "XL"],
+    size: '[ "S", "M", "L"]',
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211117/4Tpc/619541b1aeb2690110c9d594/-286Wx359H-463325576-pink-MODEL.jpg",
     price: 1399,
@@ -1718,7 +1716,7 @@ const Dress = [
   },
   {
     dress_name: "Printed V-neck Tshirts",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c17",
+    category_name: "T-shirt",
     brand: "marks-spencer",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1729,7 +1727,7 @@ const Dress = [
   },
   {
     dress_name: "Typographic Print Crew-Neck Tshirt",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c18",
+    category_name: "T-shirt",
     brand: "quarantine",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1740,7 +1738,7 @@ const Dress = [
   },
   {
     dress_name: "Floral Print Scoop-Neck Tshirts",
-    category_id: "0997e667-f9c7-4888-bc2c-dcf943b4d5c19",
+    category_name: "T-shirt",
     brand: "yoonoy",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1751,7 +1749,7 @@ const Dress = [
   },
   {
     dress_name: "Tropical Print A-line Dress",
-    category_id: "3f7957a8-4302-4533-8bd4-894b9ed8d9ca",
+    category_name: "Dress",
     brand: "fashfun-clothing",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1762,7 +1760,7 @@ const Dress = [
   },
   {
     dress_name: "Printed A-line Dress with Tasselled Tie-Up",
-    category_id: "3f7957a8-4302-4533-8bd4-894b9ed8d9ca",
+    category_name: "Dress",
     brand: "fusion",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1773,7 +1771,7 @@ const Dress = [
   },
   {
     dress_name: "Floral Print Fit & Flare Dress",
-    category_id: "3f7957a8-4302-4533-8bd4-894b9ed8d9ca",
+    category_name: "Dress",
     brand: "rare",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1784,7 +1782,7 @@ const Dress = [
   },
   {
     dress_name: "Printed Maxi Fit & Flare Dress",
-    category_id: "3f7957a8-4302-4533-8bd4-894b9ed8d9ca",
+    category_name: "Dress",
     brand: "fusion",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1795,18 +1793,18 @@ const Dress = [
   },
   {
     dress_name: "Striped Printed Fit and Flare Dress",
-    category_id: "3f7957a8-4302-4533-8bd4-894b9ed8d9ca",
+    category_name: "Dress",
     brand: "jaipur-kurti",
-    size: ["M", "L", "XL"],
+    size: '[ "S", "M", "L"]',
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211023/kDbb/61732384f997ddf8f1e3a9d1/-286Wx359H-463203934-blue-MODEL.jpg",
-    price: 1499,
+    price: 2499,
     rating: 5,
     gender: "Women",
   },
   {
     dress_name: "Panelled A-line Dress with Waist Tie-up",
-    category_id: "3f7957a8-4302-4533-8bd4-894b9ed8d9ca",
+    category_name: "Dress",
     brand: "rare",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1817,7 +1815,7 @@ const Dress = [
   },
   {
     dress_name: "Colour-block V-neck Maxi Dress",
-    category_id: "3f7957a8-4302-4533-8bd4-894b9ed8d9ca",
+    category_name: "Dress",
     brand: "kvs-fab",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1828,9 +1826,9 @@ const Dress = [
   },
   {
     dress_name: "Floral Print Scoop-Neck Shift Dress",
-    category_id: "3f7957a8-4302-4533-8bd4-894b9ed8d9ca",
+    category_name: "Dress",
     brand: "fig",
-    size: ["M", "L", "XL"],
+    size: '[ "S", "M", "L"]',
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210826/XglL/6126acf8aeb269a2687d6545/-286Wx359H-441125585-black-MODEL.jpg",
     price: 999,
@@ -1839,7 +1837,7 @@ const Dress = [
   },
   {
     dress_name: "Printed A-line Dress",
-    category_id: "",
+    category_name: "Dress",
     brand: "fusion",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1850,7 +1848,7 @@ const Dress = [
   },
   {
     dress_name: "Printed Flared Maxi Dress",
-    category_id: "",
+    category_name: "Dress",
     brand: "fusion",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1861,7 +1859,7 @@ const Dress = [
   },
   {
     dress_name: "Indian Print A-line Dress with Tie-Up",
-    category_id: "",
+    category_name: "Dress",
     brand: "deewa",
     size: ["XS", "S", "M", "L", "XL"],
     image:
