@@ -77,61 +77,61 @@ exports.signUpPost = async (req, res) => {
 
 // LoginPost
 
-// exports.loginPost = async (req, res) => {
-//   const { mobileno, password } = req.body;
-//   await db.query(
-//     "SELECT * FROM user_table WHERE mobileno=?",
-//     [mobileno],
-//     async (err, results) => {
-//       if (err) {
-//         console.log(err);
-//         return res.status(500).json({
-//           error: "User not found",
-//         });
-//       }
-//       if (results.length === 0)
-//         return res.status(401).json({
-//           error: "Invalid email or password",
-//         });
-//       await db.query(
-//         "SELECT * FROM user_table WHERE user_id =?",
-//         [results[0].user_id],
-//         async (err, results) => {
-//           if (err) {
-//             console.log(err);
-//             return res.status(500).json({
-//               error: err.message,
-//             });
-//           }
+exports.loginPost = async (req, res) => {
+  const { email, password } = req.body;
+  await db.query(
+    "SELECT * FROM Users WHERE email=?",
+    [email],
+    async (err, results) => {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({
+          error: "User not found",
+        });
+      }
+      if (results.length === 0)
+        return res.status(401).json({
+          error: "Invalid email or password",
+        });
+      await db.query(
+        "SELECT * FROM Users WHERE user_id =?",
+        [results[0].user_id],
+        async (err, results) => {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({
+              error: err.message,
+            });
+          }
 
-//           const user = results[0];
-//           if (!bcrypt.compareSync(password, user.password)) {
-//             return res.status(401).json({
-//               error: "Invalid password",
-//             });
-//           }
-//           const token = jwt.sign(
-//             {
-//               id: results[0].id,
-//               username: results[0].username,
-//               email: results[0].email,
-//               mobileno: results[0].mobileno,
-//               created_at: results[0].created_at,
-//               updated_at: results[0].updated_at,
-//               followed_artist: results[0].followed_artist,
-//               history: results[0].history,
-//             },
-//             process.env.SECRET,
-//             {
-//               expiresIn: 604800,
-//             }
-//           );
-//           return res.json({
-//             token: token,
-//             ...user,
-//           });
-//         }
-//       );
-//     }
-//   );
-// };
+          const user = results[0];
+          if (!bcrypt.compareSync(password, user.password)) {
+            return res.status(401).json({
+              error: "Invalid password",
+            });
+          }
+          const token = jwt.sign(
+            {
+              id: results[0].id,
+              username: results[0].username,
+              email: results[0].email,
+              mobileno: results[0].mobileno,
+              created_at: results[0].created_at,
+              updated_at: results[0].updated_at,
+              followed_artist: results[0].followed_artist,
+              history: results[0].history,
+            },
+            process.env.SECRET,
+            {
+              expiresIn: 604800,
+            }
+          );
+          return res.json({
+            token: token,
+            ...user,
+          });
+        }
+      );
+    }
+  );
+};
