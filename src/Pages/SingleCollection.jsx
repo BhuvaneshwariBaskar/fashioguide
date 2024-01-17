@@ -4,7 +4,7 @@ import Singlecollection from '../components/Collectioncompo/Singlecollectioncard
 import { Dresscollection } from "../utils/collection";
 
 
-const SingleCollection = () => {
+const SingleCollection = ({user}) => {
   const [dressData, setDressData] = useState([]);
 
     useEffect(() => {

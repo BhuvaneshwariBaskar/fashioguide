@@ -6,7 +6,6 @@ const Roundcard = ({womendress}) => {
   console.log(womendress);
   const navigateToPage=(e)=>{
     e.preventDefault();
-    
     navigate('/singlecollection', { state: { data: e } });
   }
 

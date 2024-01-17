@@ -6,7 +6,7 @@ import { Dresscollection } from "../utils/collection";
 import CircleSlider from "../components/swiper/Swiper";
 import { Category } from "../utils/category";
 
-const Collection = () => {
+const Collection = ({user}) => {
   const [womenDress, setWomenDress] = useState([]);
   const [menDress, setMenDress] = useState([]);
   console.log(Category);
