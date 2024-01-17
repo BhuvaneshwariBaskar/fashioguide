@@ -5,11 +5,13 @@ const Roundcard = ({womendress}) => {
   const navigate = useNavigate();
   console.log(womendress);
   const navigateToPage=(e)=>{
+    e.preventDefault();
+    
     navigate('/singlecollection', { state: { data: e } });
   }
 
   return (
-    <div className="sm:w-96 position:relative justify-center items-center" onClick={navigateToPage(womendress.dresses)}>
+    <div className="sm:w-96 position:relative justify-center items-center" onClick={navigateToPage(womendress.category_name)}>
 <div className="w-96 h-[50vh] position:relative justify-center items-center bg-white my-7 mt-7 mb-4 bg-cover bg-center" style={{ backgroundImage: `url(${womendress.image})` }}>
       
       </div>

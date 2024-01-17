@@ -10,15 +10,19 @@ import Cart from './pages/Cart';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Contact from './pages/Contact';
+import { useSelector } from 'react-redux';
   
 function App() {
+  const {user} =useSelector((state)=>({...state}));
+  
   return (
     <BrowserRouter>
     <Routes>
-    <Route path="/" element={<Home/>} />
-    <Route path="/signup" element={<Signup/>}/>
-    <Route path="/login" element={<Login/>}/>
-    <Route path="/collections" element={<Collection/>}/>
+    {user?(
+      <>
+      <Route path="/" element={<Home/>} />
+      <Route path="/collections" element={<Collection/>}/>
     <Route path="/individual" element={<Individual/>}/>
     <Route path="/singlecollection" element={<SingleCollection/>}/>
     <Route path="/category" element={<Category/>}/>
@@ -26,6 +30,20 @@ function App() {
     <Route path="/individual" element={<Individual/>}/>
     <Route path="/cart" element={<Cart/>}/>
     <Route path="/profile" element={<Profile/>}/>
+    <Route path="/contact" element={<Contact/>}/>
+      </>
+    ):(
+      <>
+    <Route path="/signup" element={<Signup/>}/>
+    <Route path="/login" element={<Login/>}/>
+    <Route path="/" element={<Login />} />
+    <Route path="*" element={<div>404 - Page Not Found</div>} />
+      </>
+    )
+    }
+    
+    
+
     </Routes>
     </BrowserRouter>
   );
