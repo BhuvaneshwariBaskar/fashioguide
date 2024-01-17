@@ -12,39 +12,39 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Contact from './pages/Contact';
 import { useSelector } from 'react-redux';
-  
+
 function App() {
-  const {user} =useSelector((state)=>({...state}));
-  
+  const { user } = useSelector((state) => ({ ...state }));
+
   return (
     <BrowserRouter>
-    <Routes>
-    {user?(
-      <>
-      <Route path="/" element={<Home/>} />
-      <Route path="/collections" element={<Collection/>}/>
-    <Route path="/individual" element={<Individual/>}/>
-    <Route path="/singlecollection" element={<SingleCollection/>}/>
-    <Route path="/category" element={<Category/>}/>
-    <Route path="/collections" element={<Collection/>}/>
-    <Route path="/individual" element={<Individual/>}/>
-    <Route path="/cart" element={<Cart/>}/>
-    <Route path="/profile" element={<Profile/>}/>
-    <Route path="/contact" element={<Contact/>}/>
-      </>
-    ):(
-      <>
-    <Route path="/signup" element={<Signup/>}/>
-    <Route path="/login" element={<Login/>}/>
-    <Route path="/" element={<Login />} />
-    <Route path="*" element={<div>404 - Page Not Found</div>} />
-      </>
-    )
-    }
-    
-    
+      <Routes>
+        {user ? (
+          <>
+            <Route path="/home" element={<Home />} />
+            <Route path="/collections" element={<Collection />} />
+            <Route path="/individual" element={<Individual />} />
+            <Route path="/singlecollection" element={<SingleCollection />} />
+            <Route path="/category" element={<Category />} />
+            <Route path="/collections" element={<Collection />} />
+            <Route path="/individual" element={<Individual />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/contact" element={<Contact />} />
+          </>
+        ) : (
+          <>
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Login />} />
+            <Route path="*" element={<div>404 - Page Not Found</div>} />
+          </>
+        )
+        }
 
-    </Routes>
+
+
+      </Routes>
     </BrowserRouter>
   );
 }
