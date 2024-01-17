@@ -1,20 +1,22 @@
 import React ,{useEffect,useState}from 'react';
 import Navbar2 from '../components/Navbar/Navbar2.component'
 import Singlecollection from '../components/Collectioncompo/Singlecollectioncard'
-import { Dresscollection } from "../utils/collection";
+// import { Dresscollection } from "../utils/collection";
+import { useLocation } from 'react-router-dom';
+import { dress } from '../axios/dress.axios';
 
 
 const SingleCollection = ({user}) => {
   const [dressData, setDressData] = useState([]);
-
-    useEffect(() => {
-        console.log(Dresscollection);
-        if ( Dresscollection && Dresscollection.length > 0) {
-          const data =  Dresscollection.filter((event) => event.gender_type === "Female");
-          setDressData(data);
-          console.log(dressData);
-        }
-      }, []);
+  const location = useLocation();
+  const passedData = location.state && location.state.data;
+  useEffect(() => {
+    dress(user.token).then((res) => {
+      const data = res.data.filter((event) => event.category_name === passedData);
+      setDressData(data);
+    });
+  }, []);
+    
   return (
     <section className="bg-[#EEEEEE]">
     {/* Navbar */}
