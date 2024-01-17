@@ -6,19 +6,19 @@ import { Dresscollection } from "../utils/collection";
 import CircleSlider from "../components/swiper/Swiper";
 import { Category } from "../utils/category";
 
-const Collection = () => {
+const Collection = ({user}) => {
   const [womenDress, setWomenDress] = useState([]);
   const [menDress, setMenDress] = useState([]);
   console.log(Category);
 
   useEffect(() => {
     if (Category && Category.length > 0) {
-      const data = Category.filter((event) => event.gender_type === "Female");
+      const data = Category.filter((event) => event.gender_type === "Women");
       setWomenDress(data);
       console.log(womenDress);
     }
     if (Category && Category.length > 0) {
-      const data = Category.filter((event) => event.gender_type === "Male");
+      const data = Category.filter((event) => event.gender_type === "Men");
       setMenDress(data);
       console.log(menDress);
     }
