@@ -38,6 +38,17 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Login />} />
             <Route path="*" element={<div>404 - Page Not Found</div>} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/collections" element={<Collection />} />
+            <Route path="/individual" element={<Individual />} />
+            <Route path="/singlecollection" element={<SingleCollection />} />
+            <Route path="/category" element={<Category />} />
+            <Route path="/collections" element={<Collection />} />
+            <Route path="/individual" element={<Individual />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/contact" element={<Contact />} />
+        
           </>
         )
         }

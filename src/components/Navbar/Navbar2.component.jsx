@@ -34,8 +34,8 @@ const Navbar2 = () => {
           </button>
 
           {isDropdownVisible && (
-            <div className="absolute bg-black text-white flex flex-col">
-              <Link to="/men">Men Collection</Link>
+            <div className="absolute bg-white text-white flex flex-col">
+              <div className="text-black block w-6 px-4 py-2 text-sm"><Link to="/men">Men Collection</Link></div>
               <Link to="/women">Women Collection</Link>
             </div>
           )}
