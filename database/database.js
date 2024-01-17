@@ -1901,7 +1901,7 @@ db.Dress = dressModel(sequelize);
 
 //Sync database
 
-// await sequelize.sync({ force: true });
+// sequelize.sync({ force: true });
 // console.log("Tables synchronized!");
 
 // db.User.sync({ force: true });
@@ -1913,43 +1913,7 @@ db.Dress = dressModel(sequelize);
 // db.Dress.sync({ force: true });
 //     console.log("Tables synchronized!");
 
-// Category Creation
 
-// const bulkCreate=[{
-//   category_name: 'T-shirt',
-// },{
-//   category_name: 'Trousers',
-// },{
-//   category_name: 'Shirt',
-// },
-// {
-//   category_name: 'Jeans',
-// },
-// {
-//   category_name: 'Sweatshirt',
-// },
-// {
-//   category_name: 'Top',
-// },
-// {
-//   category_name: 'Kurta',
-// },
-// {
-//   category_name: 'Women T-shirt',
-// },
-// {
-//   category_name: 'Dress',
-// }]
-// db.Category.bulkCreate(bulkCreate)
-// .then((bulkCreate) => {
-//   console.log('Categories created:', bulkCreate.map(category => category.toJSON()));
-// })
-// .catch((error) => {
-//   console.error('Error creating categories:', error);
-// })
-// .finally(() => {
-//   sequelize.close(); // Close the Sequelize connection when done
-// });
 
 // Dress Creation
 
