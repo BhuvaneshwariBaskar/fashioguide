@@ -27,7 +27,7 @@ export const Category = [
     {
         category_id:3604,
         image:
-      "https://cdn.shopify.com/s/files/1/0266/6276/4597/products/300937124LEMON_3.jpg?v=1700645374",
+      "https://cdn.shopify.com/s/files/1/0266/6276/4597/products/300888791TEAL_2.jpg?v=1700645299",
        category_name: "Shirt",
         gender_type:"Men",
         
