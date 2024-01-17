@@ -13,12 +13,12 @@ const Collection = ({user}) => {
 
   useEffect(() => {
     if (Category && Category.length > 0) {
-      const data = Category.filter((event) => event.gender_type === "Female");
+      const data = Category.filter((event) => event.gender_type === "Women");
       setWomenDress(data);
       console.log(womenDress);
     }
     if (Category && Category.length > 0) {
-      const data = Category.filter((event) => event.gender_type === "Male");
+      const data = Category.filter((event) => event.gender_type === "Men");
       setMenDress(data);
       console.log(menDress);
     }
