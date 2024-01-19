@@ -13,6 +13,7 @@ const Individual = () => {
   console.log(size);
   return (
     <>
+    
       <Navbar2></Navbar2>
       <div className="bg-[#EEEEEE]">
         <h6 className="p-4 font-bold">{passedData.dress_name}</h6>

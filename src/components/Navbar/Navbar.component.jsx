@@ -23,28 +23,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/collections">Collections</Link>
 
-<<<<<<< HEAD
-        <div className="relative group flex items-center">
-          <Link to="/category">Category</Link>
-          <button onClick={handleIconClick}>
-            <img
-              width="25"
-              height="25"
-              src="https://img.icons8.com/material-rounded/24/000/expand-arrow--v1.png"
-              alt="expand-arrow--v1"
-            />
-          </button>
-
-          {isDropdownVisible && (
-            <div className="absolute bg-black text-white flex flex-col">
-              <div className="w-6 bg-transparent"><Link to="/men">Men Collection</Link></div>
-              <Link to="/women">Women Collection</Link>
-            </div>
-          )}
-        </div>
-=======
         <Link to="/category">Category</Link>
->>>>>>> 56a785c5871bb4246e973349ce154dcd8d684199
 
         <Link to="/recommendation">Get Recommendation</Link>
         <Link to="/tryon">Try On</Link>
