@@ -305,7 +305,7 @@ const Dress = [
     dress_name: "Fastdry Active Crew-Neck T-shirt",
     category_name: "T-shirt",
     brand: "performax",
-    size: '["M", "L", "XL"]',
+    size: ["M", "L", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20220126/bb1Z/61f048fdf997dd66233c6c5d/-286Wx359H-441128501-offwhite-MODEL.jpg",
     price: 499,
@@ -393,7 +393,7 @@ const Dress = [
     dress_name: "Flat-Front Trousers with Insert Pockets",
     category_name: "Trousers",
     brand: "john-players",
-    size: '[ "S", "M", "L"]',
+    size: [ "S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210810/9kux/61117d7aaeb269a2686c92f8/-286Wx359H-441122675-grey-MODEL.jpg",
     price: 1499,
@@ -525,7 +525,7 @@ const Dress = [
     dress_name: "Slim Fit Flat-Front Chino Trousers",
     category_name: "Trousers",
     brand: "netplay",
-    size: '["S", "M", "XL"]',
+    size: ["S", "M", "XL"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211029/Qcex/617b2d02aeb2690110b09439/-286Wx359H-469034697-multi-MODEL.jpg",
     price: 1649,
@@ -1438,7 +1438,7 @@ const Dress = [
     dress_name: "Embroidered Straight Kurta Set with Dupatta",
     category_name: "Kurta",
     brand: "shewill",
-    size: '[ "S", "M", "L"]',
+    size: [ "S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211005/5558/615b9aabaeb2692b85a59ded/-286Wx359H-463058975-cream-MODEL.jpg",
     price: 4299,
@@ -1635,7 +1635,7 @@ const Dress = [
     dress_name: "Minnie Print Crew-Neck Sweatshirt",
     category_name: "T-shirt",
     brand: "dnmx",
-    size: '[ "S", "M", "L"]',
+    size: [ "S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211006/1wGN/615dba87aeb2692b85b1ea9e/-286Wx359H-441128815-darkgrey-MODEL.jpg",
     price: 599,
@@ -1679,7 +1679,7 @@ const Dress = [
     dress_name: "Graphic Print Crew-Neck Tshirt",
     category_name: "T-shirt",
     brand: "quarantine",
-    size: '[ "S", "M", "L"]',
+    size: [ "S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211116/ndN5/6193ee8daeb2690110c80218/-286Wx359H-463323070-green-MODEL.jpg",
     price: 1399,
@@ -1712,7 +1712,7 @@ const Dress = [
     dress_name: "Typographic Print Round-Neck Tshirts",
     category_name: "T-shirt",
     brand: "quarantine",
-    size: '[ "S", "M", "L"]',
+    size: [ "S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211117/4Tpc/619541b1aeb2690110c9d594/-286Wx359H-463325576-pink-MODEL.jpg",
     price: 1399,
@@ -1800,7 +1800,7 @@ const Dress = [
     dress_name: "Striped Printed Fit and Flare Dress",
     category_name: "Dress",
     brand: "jaipur-kurti",
-    size: '[ "S", "M", "L"]',
+    size: [ "S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211023/kDbb/61732384f997ddf8f1e3a9d1/-286Wx359H-463203934-blue-MODEL.jpg",
     price: 2499,
@@ -1833,7 +1833,7 @@ const Dress = [
     dress_name: "Floral Print Scoop-Neck Shift Dress",
     category_name: "Dress",
     brand: "fig",
-    size: '[ "S", "M", "L"]',
+    size: [ "S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210826/XglL/6126acf8aeb269a2687d6545/-286Wx359H-441125585-black-MODEL.jpg",
     price: 999,
@@ -1874,6 +1874,7 @@ const Dress = [
     gender: "Women",
   },
 ];
+
 
 
 const db = {};
