@@ -103,3 +103,26 @@ exports.login = async (req, res) => {
   }
 
 };
+
+exports.addWishList = async (req, res) => {
+  try {
+    const { wishlist } = req.body;
+    const { user_id } = req.params;
+    let user = await User.findOne({ where: { user_id }, raw: true });
+    if (!user) {
+      return res.status(401).json({
+        error: "User not found",
+      });
+    }
+
+    user.wishlist = wishlist;
+    await user.save();
+
+    return res.json("OKAY");
+  } 
+  catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
