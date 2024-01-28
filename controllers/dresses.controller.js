@@ -1,4 +1,4 @@
-const {  Dress } = require("../database/database");
+const {  Dress, User } = require("../database/database");
 
 exports.fetchDress = async (req, res) => {
   try {
@@ -14,3 +14,27 @@ exports.fetchDress = async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
+exports.addRemoveCart=async(req,res)=>{
+
+  try {
+    const { bag } = req.body;
+    const { user_id } = req.params;
+    let result= await User.update(
+      {cart: bag},
+      {returning: true,where: {user_id}}
+    )
+    console.log(result);
+    if (result.rowCount === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    return res.json('OKAY');
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+
+}
+
+
