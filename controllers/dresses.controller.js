@@ -1,4 +1,8 @@
 const { Dress, User } = require("../database/database");
+const { Op } = require('sequelize');
+
+
+
 
 exports.fetchDress = async (req, res) => {
   try {
@@ -42,9 +46,17 @@ exports.getCart= async (req, res) => {
       return res.status(404).json({ error: 'User not found' });
     }   
     let bag=user.bag;
-    await user.save();
+    console.log(bag);
+    const DressList = await Dress.findAll({
+      where: {
+        dress_id: {
+          [Op.in]: bag
+        }
+      }
+    });
+    console.log(DressList);
+    return res.status(200).json({ message: "Okay", DressList });
 
-    return res.json("OKAY");
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "Internal Server Error" });
