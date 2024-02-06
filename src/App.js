@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Contact from "./pages/Contact";
 import { useSelector } from "react-redux";
+import TryOn from "./pages/TryOn";
 
 function App() {
   const { user } = useSelector((state) => ({ ...state }));
@@ -31,6 +32,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="tryon" element={<TryOn />} />
           </>
         ) : (
           <>

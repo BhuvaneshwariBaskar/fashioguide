@@ -64,7 +64,7 @@ export const Category = [
     {
         category_id:3602,
         image:"https://cdn.shopify.com/s/files/1/0266/6276/4597/products/300937005LILAC_3.jpg?v=1700645437",
-      category_name: "T-shirt",
+      category_name: "Women TShirt",
         gender_type:"Women",
         
         
