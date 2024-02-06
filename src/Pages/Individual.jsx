@@ -1,42 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar2 from "../components/Navbar/Navbar2.component";
-import Roundcard from "../components/Collectioncompo/Roundcard";
-import { Dresscollection } from "../utils/collection";
 import { useLocation } from "react-router-dom";
 import { addWishlist } from "../axios/user.axios";
-import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
 
-
-
 const Individual = ({ user }) => {
+  const dispatch = useDispatch();
+  const location = useLocation();
   const [selectedSize, setSelectedSize] = useState(null);
-  const [wishlist, setwishlist] = useState([])
+  
+  
+ 
+  const passedData = location.state && location.state.data;
+  var size = passedData.size;
+  var itemsize = ["XS", "S", "M", "L", "XL"];
+  
   const handleSizeClick = (index) => {
     setSelectedSize(index);
   };
-
-  const location = useLocation();
-  const passedData = location.state && location.state.data;
-  console.log(passedData);
-  var size = passedData.size;
-  var itemsize = ["XS", "S", "M", "L", "XL"];
-  console.log(size);
-
-
-  // const handleAddToWishlist = () => {
-  //   setwishlist((prevWishlist) => {
-  //     const updatedWishlist = [...prevWishlist, passedData.dress_id];
-  //     console.log("Updated Wishlist:", updatedWishlist);
-  //     wishlist(updatedWishlist, user.user_id).then((res) => {
-  //       console.log(res);
-  //     });
-  //     return updatedWishlist; 
-  //   });
-  // };
-
-  const dispatch = useDispatch();
-
   const handleAddToWishlist = async () => {
     let currentWishlist = user.wishlist ? user.wishlist : [];
     console.log("Current wishlist:", currentWishlist);

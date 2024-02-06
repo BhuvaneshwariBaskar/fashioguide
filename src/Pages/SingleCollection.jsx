@@ -8,6 +8,7 @@ import { dress } from '../axios/dress.axios';
 
 const SingleCollection = ({user}) => {
   const [dressData, setDressData] = useState([]);
+  
   const location = useLocation();
   const passedData = location.state && location.state.data;
   useEffect(() => {
