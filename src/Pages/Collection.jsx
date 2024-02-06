@@ -9,18 +9,18 @@ import { Category } from "../utils/category";
 const Collection = ({user}) => {
   const [womenDress, setWomenDress] = useState([]);
   const [menDress, setMenDress] = useState([]);
-  console.log(Category);
+  // console.log(Category);
 
   useEffect(() => {
     if (Category && Category.length > 0) {
       const data = Category.filter((event) => event.gender_type === "Women");
       setWomenDress(data);
-      console.log(womenDress);
+     
     }
     if (Category && Category.length > 0) {
       const data = Category.filter((event) => event.gender_type === "Men");
       setMenDress(data);
-      console.log(menDress);
+      // console.log(menDress);
     }
   }, []);
 
