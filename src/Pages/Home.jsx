@@ -4,16 +4,19 @@ import korean from "../assests/korean.png"
 import Black from "../assests/Black.png"
 import White from "../assests/white.png"
 import Kid from "../assests/kid.png"
+import Navbar2 from "../components/Navbar/Navbar2.component";
+
 
 const Home = () => {
   return (
     <>
-
+<div className="bg-[#525D62]">
       <Navbar></Navbar>
+      {/* <Navbar2></Navbar2> */}
 
-      <div className="flex w-[100vw] h-[90vh]">
+      <div className="flex w-auto h-[90vh]">
 
-        <div className="bg-[#525D62]  w-1/2 h-full ">
+        <div className="bg-[#525D62] flex items-center justify-center w-1/2 h-full ">
           <img
             src={korean}
             alt="Your Image"
@@ -33,7 +36,7 @@ const Home = () => {
         </div>
       </div>
       {/* second */}
-      <div className="flex w-[100vw] h-[100vh]">
+      <div className="flex w-auto h-[90vh] flex items-center justify-center">
 
         <div className="flex w-1/2 h-full flex-col items-center justify-center  bg-[#795E4A]">
           <p className="mb-3 font-dancing-script text-5xl text-white">Limited</p>
@@ -44,7 +47,7 @@ const Home = () => {
             Explore Now
           </button>
         </div>
-        <div className="bg-[#795E4A]  w-1/2 h-full ">
+        <div className="bg-[#795E4A] w-1/2  h-full ">
           <img
             src={Black}
             alt="Your Image"
@@ -55,9 +58,9 @@ const Home = () => {
       </div>
 
       {/* third */}
-      <div className="flex w-[100vw] h-[100vh]">
+      <div className="flex w-auto h-[110vh]">
 
-        <div className="bg-[#936A68]  w-1/2 h-full ">
+        <div className="bg-[#936A68] flex items-center justify-center  w-1/2 h-full ">
           <img
             src={White}
             alt="Your Image"
@@ -80,7 +83,7 @@ const Home = () => {
       </div>
 
       {/* fourth */}
-      <div className="flex w-[100vw] h-[115vh]">
+      <div className="flex w-auto h-[100vh]">
 
         <div className="flex w-1/2 h-full flex-col items-center justify-center  bg-[#4F2C23]">
           <p className="mb-3 font-dancing-script text-5xl text-white">Limited</p>
@@ -99,6 +102,7 @@ const Home = () => {
           />
 
         </div>
+      </div>
       </div>
     </>
 

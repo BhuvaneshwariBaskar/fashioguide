@@ -1,16 +1,16 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Home from "./pages/Home";
+import Home from "./Pages/Home";
 import Collection from "./pages/Collection";
 import Individual from "./pages/Individual";
-import SingleCollection from "./pages/SingleCollection";
-import Category from "./pages/Category";
-import Cart from "./pages/Cart";
-import Profile from "./pages/Profile";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Contact from "./pages/Contact";
+import SingleCollection from "./Pages/SingleCollection";
+import Category from "./Pages/Category";
+import Cart from "./Pages/Cart";
+import Profile from "./Pages/Profile";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
+import Contact from "./Pages/Contact";
 import { useSelector } from "react-redux";
 import TryOn from "./pages/TryOn";
 
@@ -23,12 +23,10 @@ function App() {
         {user ? (
           <>
             <Route path="/" element={<Home />} />
-            <Route path="/collections" element={<Collection />} />
             <Route path="/individual" element={<Individual />} />
             <Route path="/singlecollection" element={<SingleCollection user={user}/>} />
             <Route path="/category" element={<Category />} />
             <Route path="/collections" element={<Collection user={user}/>} />
-            <Route path="/individual" element={<Individual />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/contact" element={<Contact />} />
@@ -40,6 +38,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Login />} />
             <Route path="*" element={<div>404 - Page Not Found</div>} />
+            
+           
+        
           </>
         )}
       </Routes>

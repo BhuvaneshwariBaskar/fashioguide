@@ -33,14 +33,14 @@ const Cart = () => {
             <Navbar2></Navbar2>
 
             <div className='flex flex-row'>
-                <div className="w-8/12 h-screen flex items-start justify-center p-4">
+                <div className="w-8/12 h-auto flex items-start justify-center p-4">
 
                     <div class="w-full ">
                         <div class="my-2">
                             <h3 class="text-4xl font-bold tracking-wider  px-10 mb-6">Shopping Cart</h3>
                         </div>
 
-                        <table className="w-full shadow-inner w-full sm:w-full md:w-full lg:w-2/3 xl:w-1/2 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-[#FF3754] scrollbar-track-gray-300">
+                        <table className="w-3/5 shadow-inner overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-[#FF3754] scrollbar-track-gray-300">
                             <thead>
                                 <tr className="bg-gray-100">
                                     <th className="px-6 py-3 font-bold whitespace-nowrap">Image</th>
