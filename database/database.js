@@ -5,8 +5,8 @@ const dressModel = require("./model/dresses.model");
 
 const Dress = [
   {
-    dress_name: "Checked Polo T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Checked Polo Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -16,8 +16,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Heathered Crew-Neck T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Heathered Crew-Neck Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "performax",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -27,8 +27,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Fastdry Active Crew-Neck T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Fastdry Active Crew-Neck Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "performax",
     size: ["XS", "S", "M", "XL"],
     image:
@@ -38,8 +38,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Heathered Crew-Neck T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Heathered Crew-Neck Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -49,8 +49,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Leaf Print Polo T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Leaf Print Polo Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "netplay",
     size: ["XS", "S", "M"],
     image:
@@ -60,8 +60,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Heathered Polo T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Heathered Polo Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "teamspirit",
     size: ["XS", "S", "L", "XL"],
     image:
@@ -71,8 +71,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Crew-Neck T-shirt with Brand Icon",
-    category_name: "T-shirt",
+    dress_name: "Crew-Neck Mens TShirt with Brand Icon",
+    category_name: "Mens TShirt",
     brand: "puma",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -82,8 +82,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Striped Polo T-shirt with Ribbed Hems",
-    category_name: "T-shirt",
+    dress_name: "Striped Polo Mens TShirt with Ribbed Hems",
+    category_name: "Mens TShirt",
     brand: "netplay",
     size: ["XS", "M", "L", "XL"],
     image:
@@ -93,8 +93,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Core Varsity Polo T-shirt with Contrast Tipping",
-    category_name: "T-shirt",
+    dress_name: "Core Varsity Polo Mens TShirt with Contrast Tipping",
+    category_name: "Mens TShirt",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -104,8 +104,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Striped Button-Down T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Striped Button-Down Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -115,8 +115,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Polo T-shirt with Signature Branding",
-    category_name: "T-shirt",
+    dress_name: "Polo Mens TShirt with Signature Branding",
+    category_name: "Mens TShirt",
     brand: "dnmx",
     size: ["XS", "S", "M"],
     image:
@@ -126,8 +126,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Jacquard-Woven Slim Fit Polo T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Jacquard-Woven Slim Fit Polo Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -137,8 +137,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Core Rib V-Neck T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Core Rib V-Neck Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "teamspirit",
     size: ["XS", "S", "M"],
     image:
@@ -148,8 +148,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Ombre-Dyed Henley T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Ombre-Dyed Henley Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "campus-sutra",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -159,8 +159,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Polo T-shirt with Signature Branding",
-    category_name: "T-shirt",
+    dress_name: "Polo Mens TShirt with Signature Branding",
+    category_name: "Mens TShirt",
     brand: "dnmx",
     size: ["XS", "S", "M"],
     image:
@@ -170,8 +170,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Slim Fit Polo T-shirt with Contrast Tipping",
-    category_name: "T-shirt",
+    dress_name: "Slim Fit Polo Mens TShirt with Contrast Tipping",
+    category_name: "Mens TShirt",
     brand: "netplay",
     size: ["XS", "L", "XL"],
     image:
@@ -181,8 +181,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Typographic Print Crew-Neck T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Typographic Print Crew-Neck Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -192,8 +192,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Slim Fit Polo T-shirt with Cut & Sew Panels",
-    category_name: "T-shirt",
+    dress_name: "Slim Fit Polo Mens TShirt with Cut & Sew Panels",
+    category_name: "Mens TShirt",
     brand: "teamspirit",
     size: ["XS", "XL"],
     image:
@@ -203,8 +203,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Brand Print Ombre Crew-Neck T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Brand Print Ombre Crew-Neck Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -214,8 +214,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Graphic Print Crew-Neck T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Graphic Print Crew-Neck Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "puma",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -225,8 +225,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Core Varsity Polo T-shirt with Contrast Tipping",
-    category_name: "T-shirt",
+    dress_name: "Core Varsity Polo Mens TShirt with Contrast Tipping",
+    category_name: "Mens TShirt",
     brand: "teamspirit",
     size: ["XS", "S", "M"],
     image:
@@ -236,8 +236,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Reflective Colourblock Crew-Neck T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Reflective Colourblock Crew-Neck Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -247,8 +247,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Slim Fit Polo T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Slim Fit Polo Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L"],
     image:
@@ -258,8 +258,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Crew-Neck T-shirt with Contrast Stripes",
-    category_name: "T-shirt",
+    dress_name: "Crew-Neck Mens TShirt with Contrast Stripes",
+    category_name: "Mens TShirt",
     brand: "ausk",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -269,8 +269,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Striped Polo T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Striped Polo Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "netplay",
     size: ["XS", "S", "M", "L"],
     image:
@@ -280,8 +280,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Crew-Neck T-shirt with Thumbhole Sleeves",
-    category_name: "T-shirt",
+    dress_name: "Crew-Neck Mens TShirt with Thumbhole Sleeves",
+    category_name: "Mens TShirt",
     brand: "teamspirit",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -291,8 +291,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Crew-Neck T-shirt with Brand Icon",
-    category_name: "T-shirt",
+    dress_name: "Crew-Neck Mens TShirt with Brand Icon",
+    category_name: "Mens TShirt",
     brand: "puma",
     size: ["S", "M", "L", "XL"],
     image:
@@ -302,8 +302,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Fastdry Active Crew-Neck T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Fastdry Active Crew-Neck Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "performax",
     size: ["M", "L", "XL"],
     image:
@@ -313,8 +313,8 @@ const Dress = [
     gender: "Men",
   },
   {
-    dress_name: "Striped Crew-Neck T-shirt",
-    category_name: "T-shirt",
+    dress_name: "Striped Crew-Neck Mens TShirt",
+    category_name: "Mens TShirt",
     brand: "dnmx",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -323,6 +323,7 @@ const Dress = [
     rating: 4,
     gender: "Men",
   },
+
   {
     dress_name: "Tapered Fit Flat-Front Trousers",
     category_name: "Trousers",
@@ -393,7 +394,7 @@ const Dress = [
     dress_name: "Flat-Front Trousers with Insert Pockets",
     category_name: "Trousers",
     brand: "john-players",
-    size: [ "S", "M", "L"],
+    size: ["S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210810/9kux/61117d7aaeb269a2686c92f8/-286Wx359H-441122675-grey-MODEL.jpg",
     price: 1499,
@@ -543,6 +544,7 @@ const Dress = [
     rating: 4,
     gender: "Men",
   },
+
   {
     dress_name: "Leaf Print Shirt with Patch Pocket",
     category_name: "Shirt",
@@ -1438,7 +1440,7 @@ const Dress = [
     dress_name: "Embroidered Straight Kurta Set with Dupatta",
     category_name: "Kurta",
     brand: "shewill",
-    size: [ "S", "M", "L"],
+    size: ["S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211005/5558/615b9aabaeb2692b85a59ded/-286Wx359H-463058975-cream-MODEL.jpg",
     price: 4299,
@@ -1631,20 +1633,21 @@ const Dress = [
     rating: 5,
     gender: "Women",
   },
+
   {
     dress_name: "Minnie Print Crew-Neck Sweatshirt",
-    category_name: "T-shirt",
+    category_name: "Women TShirt",
     brand: "dnmx",
-    size: [ "S", "M", "L"],
+    size: ["S", "M", "L"],
     image:
-      "https://assets.ajio.com/medias/sys_master/root/20211006/1wGN/615dba87aeb2692b85b1ea9e/-286Wx359H-441128815-darkgrey-MODEL.jpg",
+      "https://drive.google.com/file/d/1VwY5ck9WMLoIKVhKJF28CooDaPHqk8Fg/view?usp=drive_linkg",
     price: 599,
     rating: 5,
     gender: "Women",
   },
   {
-    dress_name: "Tshirt mint xs",
-    category_name: "T-shirt",
+    dress_name: "T-shirt mint xs",
+    category_name: "Women TShirt",
     brand: "fig",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1654,8 +1657,8 @@ const Dress = [
     gender: "Women",
   },
   {
-    dress_name: "Vero women tshirts white s",
-    category_name: "T-shirt",
+    dress_name: "Vero women T-Shirt white s",
+    category_name: "Women TShirt",
     brand: "vero-moda",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1665,8 +1668,9 @@ const Dress = [
     gender: "Women",
   },
   {
-    dress_name: "Crew-Neck Panelled Slim T-shirt with Drop-Shoulder Sleeves",
-    category_name: "T-shirt",
+    dress_name:
+      "Crew-Neck Panelled Slim Mens TShirt with Drop-Shoulder Sleeves",
+    category_name: "Women TShirt",
     brand: "trendyol",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1677,9 +1681,9 @@ const Dress = [
   },
   {
     dress_name: "Graphic Print Crew-Neck Tshirt",
-    category_name: "T-shirt",
+    category_name: "Women TShirt",
     brand: "quarantine",
-    size: [ "S", "M", "L"],
+    size: ["S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211116/ndN5/6193ee8daeb2690110c80218/-286Wx359H-463323070-green-MODEL.jpg",
     price: 1399,
@@ -1688,7 +1692,7 @@ const Dress = [
   },
   {
     dress_name: "Typographic Printed Crew-Neck Tshirts",
-    category_name: "T-shirt",
+    category_name: "Women TShirt",
     brand: "quarantine",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1699,7 +1703,7 @@ const Dress = [
   },
   {
     dress_name: "Typographic Print Round-Neck Tshirts",
-    category_name: "T-shirt",
+    category_name: "Women TShirt",
     brand: "quarantine",
     size: ["XS", "S", "M", "L"],
     image:
@@ -1710,9 +1714,9 @@ const Dress = [
   },
   {
     dress_name: "Typographic Print Round-Neck Tshirts",
-    category_name: "T-shirt",
+    category_name: "Women TShirt",
     brand: "quarantine",
-    size: [ "S", "M", "L"],
+    size: ["S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211117/4Tpc/619541b1aeb2690110c9d594/-286Wx359H-463325576-pink-MODEL.jpg",
     price: 1399,
@@ -1721,7 +1725,7 @@ const Dress = [
   },
   {
     dress_name: "Printed V-neck Tshirts",
-    category_name: "T-shirt",
+    category_name: "Women TShirt",
     brand: "marks-spencer",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1732,7 +1736,7 @@ const Dress = [
   },
   {
     dress_name: "Typographic Print Crew-Neck Tshirt",
-    category_name: "T-shirt",
+    category_name: "Women TShirt",
     brand: "quarantine",
     size: ["S", "M", "L", "XL"],
     image:
@@ -1743,7 +1747,7 @@ const Dress = [
   },
   {
     dress_name: "Floral Print Scoop-Neck Tshirts",
-    category_name: "T-shirt",
+    category_name: "Women TShirt",
     brand: "yoonoy",
     size: ["XS", "S", "M", "L", "XL"],
     image:
@@ -1800,7 +1804,7 @@ const Dress = [
     dress_name: "Striped Printed Fit and Flare Dress",
     category_name: "Dress",
     brand: "jaipur-kurti",
-    size: [ "S", "M", "L"],
+    size: ["S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20211023/kDbb/61732384f997ddf8f1e3a9d1/-286Wx359H-463203934-blue-MODEL.jpg",
     price: 2499,
@@ -1833,7 +1837,7 @@ const Dress = [
     dress_name: "Floral Print Scoop-Neck Shift Dress",
     category_name: "Dress",
     brand: "fig",
-    size: [ "S", "M", "L"],
+    size: ["S", "M", "L"],
     image:
       "https://assets.ajio.com/medias/sys_master/root/20210826/XglL/6126acf8aeb269a2687d6545/-286Wx359H-441125585-black-MODEL.jpg",
     price: 999,
@@ -1875,8 +1879,6 @@ const Dress = [
   },
 ];
 
-
-
 const db = {};
 const sequelize = new Sequelize(
   process.env.DB_NAME,
@@ -1912,9 +1914,7 @@ db.Dress = dressModel(sequelize);
 // console.log("Tables synchronized!");
 
 // db.Dress.sync({ force: true });
-//     console.log("Tables synchronized!");
-
-
+//   console.log("Tables synchronized!");
 
 // Dress Creation
 

@@ -61,26 +61,5 @@ exports.getCart= async (req, res) => {
     console.error(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
-  // await db.query(
-  //   "select favorites from user_table where user_id= ? ",
-  //   [user_id],
-  //   async (err, result) => {
-  //     if (err) {
-  //       console.log(err);
-  //       return res.status(409).json({ err });
-  //     }
-  //     const favorites = JSON.parse(result.length && result[0].favorites);
-  //     await db.query(
-  //       "select * from music_table where music_id IN (?)",
-  //       [favorites],
-  //       async (err, result) => {
-  //         if (err) {
-  //           console.log(err);
-  //           return res.status(409).json({ err });
-  //         }
-  //         return res.json(result);
-  //       }
-  //     );
-  //   }
-  // );
+  
 };
