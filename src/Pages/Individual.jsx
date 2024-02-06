@@ -11,7 +11,8 @@ import { useDispatch } from 'react-redux';
 
 const Individual = ({ user }) => {
   const [selectedSize, setSelectedSize] = useState(null);
-  const [wishlist, setwishlist] = useState([])
+  const [wishlist, setwishlist] = useState([]);
+  const[fav,setFav]=useState(false);
   const handleSizeClick = (index) => {
     setSelectedSize(index);
   };
@@ -38,6 +39,7 @@ const Individual = ({ user }) => {
   const dispatch = useDispatch();
 
   const handleAddToWishlist = async () => {
+    setFav(!fav);
     let currentWishlist = user.wishlist ? user.wishlist : [];
     console.log("Current wishlist:", currentWishlist);
   
@@ -49,6 +51,7 @@ const Individual = ({ user }) => {
       dispatch({
         type: "CREATE_USER",
         payload: { ...user, wishlist: updatedWishlist },
+        
       });
   
       console.log('Item added to wishlist successfully:', updatedUser);
@@ -119,9 +122,14 @@ const Individual = ({ user }) => {
                   Add to Cart
                 </button>
                 <button className="bg-black text-white p-2 mr-2">Buy Now</button>
-                <button className="bg-black text-white p-2" onClick={handleAddToWishlist}>
-                  Add to Wishlist
-                </button>
+                {fav?
+                (<button className="bg-black text-white p-2" onClick={handleAddToWishlist}>
+                Remove from Wishlist
+              </button>):(<button className="bg-black text-white p-2" onClick={handleAddToWishlist}>
+                Add to Wishlist
+              </button>)
+              }
+                
               </div>
 
               <div className="mt-4 w-1/2 mt-10">
@@ -138,3 +146,4 @@ const Individual = ({ user }) => {
 };
 
 export default Individual;
+//fav=false->add to wishlist->true(remove from wish list)
