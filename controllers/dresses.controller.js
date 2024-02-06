@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-const {  Dress } = require("../database/database");
-const { User } = require("../database/database");
-=======
 const { Dress, User } = require("../database/database");
-const { Op } = require('sequelize');
-
-
-
->>>>>>> 3f9b86b003d971556fc3ba1030df23734222a851
+const { Op } = require("sequelize");
 
 exports.fetchDress = async (req, res) => {
   try {
@@ -30,16 +22,48 @@ exports.addRemoveCart = async (req, res) => {
     console.log(user_id);
     const user = await User.findOne({ where: { user_id } });
     if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }   
-    user.bag= bag;
+      return res.status(404).json({ error: "User not found" });
+    }
+    user.bag = bag;
     await user.save();
 
-<<<<<<< HEAD
+    //remove wishlist-get
+    return res.json("OKAY");
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+//GetCart
+exports.getCart = async (req, res) => {
+  try {
+    const { user_id } = req.body;
+    console.log(user_id);
+    const user = await User.findOne({ where: { user_id } });
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+    let bag = user.bag;
+    console.log(bag);
+    const DressList = await Dress.findAll({
+      where: {
+        dress_id: {
+          [Op.in]: bag,
+        },
+      },
+    });
+    console.log(DressList);
+    return res.status(200).json({ message: "Okay", DressList });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
 exports.addWishList = async (req, res) => {
   try {
-    const { wishlist,user_id } = req.body;
-    let user = await User.findOne({ where: { user_id }});
+    const { wishlist, user_id } = req.body;
+    let user = await User.findOne({ where: { user_id } });
     if (!user) {
       return res.status(401).json({
         error: "User not found",
@@ -50,8 +74,7 @@ exports.addWishList = async (req, res) => {
     await user.save();
 
     return res.json("OKAY");
-  } 
-  catch (error) {
+  } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
@@ -59,8 +82,8 @@ exports.addWishList = async (req, res) => {
 
 exports.orders = async (req, res) => {
   try {
-    const { order,user_id } = req.body;
-    let user = await User.findOne({ where: { user_id }});
+    const { order, user_id } = req.body;
+    let user = await User.findOne({ where: { user_id } });
     if (!user) {
       return res.status(401).json({
         error: "User not found",
@@ -71,47 +94,8 @@ exports.orders = async (req, res) => {
     await user.save();
 
     return res.json("OKAY");
-  } 
-  catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: "Internal Server Error" });
-  }
-};
-
-
-//remove wishlist-get
-=======
-    return res.json("OKAY");
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
-//GetCart
-exports.getCart= async (req, res) => {
-  try {
-    const { user_id } = req.body;
-    console.log(user_id);
-    const user = await User.findOne({ where: { user_id } });
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }   
-    let bag=user.bag;
-    console.log(bag);
-    const DressList = await Dress.findAll({
-      where: {
-        dress_id: {
-          [Op.in]: bag
-        }
-      }
-    });
-    console.log(DressList);
-    return res.status(200).json({ message: "Okay", DressList });
-
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: "Internal Server Error" });
-  }
-  
-};
->>>>>>> 3f9b86b003d971556fc3ba1030df23734222a851
