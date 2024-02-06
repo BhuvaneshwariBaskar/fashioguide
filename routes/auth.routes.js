@@ -1,11 +1,6 @@
 const express = require("express");
-<<<<<<< HEAD
-const { fetchDress , addWishList, orders} = require("../controllers/dresses.controller");
-const { signUpPost, login} = require("../controllers/auth.controller");
-=======
 const { fetchDress, addRemoveCart, getCart } = require("../controllers/dresses.controller");
 const { signUpPost, login, addWishList} = require("../controllers/auth.controller");
->>>>>>> 3f9b86b003d971556fc3ba1030df23734222a851
 
 
 const router = express.Router();
