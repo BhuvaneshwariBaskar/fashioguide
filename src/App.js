@@ -22,7 +22,7 @@ function App() {
         {user ? (
           <>
             <Route path="/" element={<Home />} />
-            <Route path="/individual" element={<Individual />} />
+            <Route path="/individual" element={<Individual user={user}/>} />
             <Route path="/singlecollection" element={<SingleCollection user={user}/>} />
             <Route path="/category" element={<Category />} />
             <Route path="/collections" element={<Collection user={user}/>} />
