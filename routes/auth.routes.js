@@ -1,7 +1,12 @@
 const express = require("express");
-const { fetchDress, addRemoveCart, getCart } = require("../controllers/dresses.controller");
-const { signUpPost, login, addWishList} = require("../controllers/auth.controller");
-
+const {
+  fetchDress,
+  addWishList,
+  orders,
+  addRemoveCart,
+  getCart,
+} = require("../controllers/dresses.controller");
+const { signUpPost, login } = require("../controllers/auth.controller");
 
 const router = express.Router();
 
@@ -12,7 +17,5 @@ router.route("/orders").post(orders);
 router.route("/login").post(login);
 router.route("/addcart").post(addRemoveCart);
 router.route("/getcart").get(getCart);
-
-
 
 module.exports = router;
