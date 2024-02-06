@@ -12,6 +12,7 @@ import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Contact from "./Pages/Contact";
 import { useSelector } from "react-redux";
+import TryOn from "./Pages/TryOn";
 
 function App() {
   const { user } = useSelector((state) => ({ ...state }));
@@ -25,10 +26,11 @@ function App() {
             <Route path="/individual" element={<Individual user={user}/>} />
             <Route path="/singlecollection" element={<SingleCollection user={user}/>} />
             <Route path="/category" element={<Category />} />
-            <Route path="/collections" element={<Collection user={user}/>} />
+            <Route path="/collections" element={<Collection user={user} />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="tryon" element={<TryOn />} />
           </>
         ) : (
           <>
@@ -36,9 +38,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Login />} />
             <Route path="*" element={<div>404 - Page Not Found</div>} />
-            
-           
-        
           </>
         )}
       </Routes>
