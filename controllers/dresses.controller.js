@@ -1,4 +1,5 @@
 const {  Dress } = require("../database/database");
+const { User } = require("../database/database");
 
 exports.fetchDress = async (req, res) => {
   try {
@@ -17,27 +18,47 @@ exports.fetchDress = async (req, res) => {
 
 //addwishlist-id-post(update)
 
-// exports.addWishList = async (req, res) => {
-//   try {
-//     const { wishlist } = req.body;
-//     const { user_id } = req.params;
-//     let user = await User.findOne({ where: { user_id }, raw: true });
-//     if (!user) {
-//       return res.status(401).json({
-//         error: "User not found",
-//       });
-//     }
+exports.addWishList = async (req, res) => {
+  try {
+    const { wishlist,user_id } = req.body;
+    let user = await User.findOne({ where: { user_id }});
+    if (!user) {
+      return res.status(401).json({
+        error: "User not found",
+      });
+    }
 
-//     user.wishlist = wishlist;
-//     await user.save();
+    user.wishlist = wishlist;
+    await user.save();
 
-//     return res.json("OKAY");
-//   } 
-//   catch (error) {
-//     console.error(error);
-//     return res.status(500).json({ error: "Internal Server Error" });
-//   }
-// };
+    return res.json("OKAY");
+  } 
+  catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+exports.orders = async (req, res) => {
+  try {
+    const { order,user_id } = req.body;
+    let user = await User.findOne({ where: { user_id }});
+    if (!user) {
+      return res.status(401).json({
+        error: "User not found",
+      });
+    }
+
+    user.order = order;
+    await user.save();
+
+    return res.json("OKAY");
+  } 
+  catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
 
 
 //remove wishlist-get
