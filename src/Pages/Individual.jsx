@@ -9,6 +9,9 @@ const Individual = ({ user }) => {
   const location = useLocation();
   const [selectedSize, setSelectedSize] = useState(null);
   const [cart, setCart] = useState(false)
+  const [wishlist, setwishlist] = useState([]);
+  const[fav,setFav]=useState(false);
+  
   
  
   const passedData = location.state && location.state.data;
@@ -19,6 +22,7 @@ const Individual = ({ user }) => {
     setSelectedSize(index);
   };
   const handleAddToWishlist = async () => {
+    setFav(!fav);
     let currentWishlist = user.wishlist ? user.wishlist : [];
     console.log("Current wishlist:", currentWishlist);
   
@@ -30,6 +34,7 @@ const Individual = ({ user }) => {
       dispatch({
         type: "CREATE_USER",
         payload: { ...user, wishlist: updatedWishlist },
+        
       });
   
       console.log('Item added to wishlist successfully:', updatedUser);
@@ -125,9 +130,14 @@ const Individual = ({ user }) => {
                 </button>)
                }
                 <button className="bg-black text-white p-2 mr-2">Buy Now</button>
-                <button className="bg-black text-white p-2" onClick={handleAddToWishlist}>
-                  Add to Wishlist
-                </button>
+                {fav?
+                (<button className="bg-black text-white p-2" onClick={handleAddToWishlist}>
+                Remove from Wishlist
+              </button>):(<button className="bg-black text-white p-2" onClick={handleAddToWishlist}>
+                Add to Wishlist
+              </button>)
+              }
+                
               </div>
 
               <div className="mt-4 w-1/2 mt-10">
@@ -144,3 +154,4 @@ const Individual = ({ user }) => {
 };
 
 export default Individual;
+//fav=false->add to wishlist->true(remove from wish list)
