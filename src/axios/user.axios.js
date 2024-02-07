@@ -21,4 +21,9 @@ export const signup=(email,name,password,phone)=>
     bag,user_id
     }); 
 
+    export const getWishlist = async (user_id) =>
+    await axios.post(`http://localhost:8080/api/getwishlist`, {
+    user_id
+    }); 
 
+    

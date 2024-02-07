@@ -28,7 +28,7 @@ const Navbar = () => {
         <Link to="/recommendation">Get Recommendation</Link>
         <Link to="/tryon">Try On</Link>
         <Link to="/contact">Contact</Link>
-        <Link to="/">
+        <Link to="/fav">
           <img
             width="25"
             height="25"

@@ -21,6 +21,9 @@ const Individual = ({ user }) => {
   const handleSizeClick = (index) => {
     setSelectedSize(index);
   };
+
+
+
   const handleAddToWishlist = async () => {
     setFav(!fav);
     let currentWishlist = user.wishlist ? user.wishlist : [];
@@ -42,6 +45,9 @@ const Individual = ({ user }) => {
       console.error('Error adding to wishlist:', error.message);
     }
   };
+
+
+  
   const handleAddToCart = async (actionType) => {
     let currentCart = user.bag ? user.bag : [];
     let updatedCart;

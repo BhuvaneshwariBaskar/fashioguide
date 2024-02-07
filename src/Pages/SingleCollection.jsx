@@ -1,7 +1,6 @@
 import React ,{useEffect,useState}from 'react';
 import Navbar2 from '../components/Navbar/Navbar2.component'
 import Singlecollection from '../components/Collectioncompo/Singlecollectioncard'
-// import { Dresscollection } from "../utils/collection";
 import { useLocation } from 'react-router-dom';
 import { dress } from '../axios/dress.axios';
 
