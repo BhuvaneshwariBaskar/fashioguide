@@ -36,7 +36,7 @@ const Navbar2 = () => {
             alt="like--v1"
           />
         </Link>
-        <Link to="/">
+        <Link to="/cart">
           <img
             width="25"
             height="25"

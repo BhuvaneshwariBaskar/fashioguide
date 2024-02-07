@@ -50,8 +50,9 @@ const Fav = ({ user }) => {
     console.log(wishlist);
     useEffect(() => {
         getWishlist(user.user_id).then((res) => {
-            setWishlist(res.data.wishlist);
             console.log(res);
+            setWishlist(res.data.wishlist);
+           
         });
     }, []);
 
