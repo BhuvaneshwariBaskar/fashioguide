@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Navbar2 from "../components/Navbar/Navbar2.component";
 import { useLocation } from "react-router-dom";
-import { addWishlist } from "../axios/user.axios";
+import { addRemoveCart, addWishlist } from "../axios/user.axios";
 import { useDispatch } from 'react-redux';
 
 const Individual = ({ user }) => {
   const dispatch = useDispatch();
   const location = useLocation();
   const [selectedSize, setSelectedSize] = useState(null);
-  
+  const [cart, setCart] = useState(false)
   
  
   const passedData = location.state && location.state.data;
@@ -37,6 +37,27 @@ const Individual = ({ user }) => {
       console.error('Error adding to wishlist:', error.message);
     }
   };
+  const handleAddToCart = async (actionType) => {
+    let currentCart = user.bag ? user.bag : [];
+    let updatedCart;
+    if (actionType === "add") {
+      updatedCart = [...currentCart, passedData.dress_id];
+      setCart(true)
+    } else if (actionType === "remove") {
+      updatedCart = currentCart.filter((itemId) => itemId !== passedData.dress_id);
+      setCart(false)
+    } 
+    try {
+      const response = await addRemoveCart(updatedCart, user.user_id);
+      console.log(response);
+      dispatch({
+        type: "CREATE_USER",
+        payload: { ...user, bag: updatedCart },
+      });
+    } catch (error) {
+      console.error('Error adding to wishlist:', error.message);
+    }
+  };
   
 
   return (
@@ -49,7 +70,7 @@ const Individual = ({ user }) => {
             <div className=" p-4 w-5/12 h-full ">
               {/* <h1>{arr && arr.dress_name}</h1> */}
               <div className="h-[20] w-[20]"></div>
-              <div class="position:relative justify-center items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 h-[50] w-[50]">
+              <div className="position:relative justify-center items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 h-[50] w-[50]">
                 <img
                   src={passedData && passedData.image}
                   alt="Your Image"
@@ -95,10 +116,14 @@ const Individual = ({ user }) => {
                   )}
                 </div>
               </div>
-              <div className="flex w-1/2 justify-between mt-8">
-                <button className="bg-black text-white p-2 mr-2">
+              <div className="flex w-1/2 justify-between mt-8" >
+               {
+                cart?( <button className="bg-black text-white p-2 mr-2" onClick={()=>handleAddToCart("remove")}> 
+                  Remove from Cart
+                </button>):( <button className="bg-black text-white p-2 mr-2" onClick={()=>handleAddToCart("add")}>
                   Add to Cart
-                </button>
+                </button>)
+               }
                 <button className="bg-black text-white p-2 mr-2">Buy Now</button>
                 <button className="bg-black text-white p-2" onClick={handleAddToWishlist}>
                   Add to Wishlist

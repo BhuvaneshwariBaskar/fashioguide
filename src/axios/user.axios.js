@@ -13,8 +13,12 @@ export const signup=(email,name,password,phone)=>
 
     export const addWishlist = async (wishlist,user_id) =>
     await axios.post(`http://localhost:8080/api/wishlist`, {
-    user_id,wishlist
+    wishlist,user_id
     }); 
 
+    export const addRemoveCart = async (bag,user_id) =>
+    await axios.post(`http://localhost:8080/api/addcart`, {
+    bag,user_id
+    }); 
 
 

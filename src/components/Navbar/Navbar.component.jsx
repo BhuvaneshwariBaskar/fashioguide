@@ -19,7 +19,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className="flex items-end space-x-4 text-black">
+      <div className="flex items-end space-x-4 text-black text-xl">
         <Link to="/">Home</Link>
         <Link to="/collections">Collections</Link>
 
