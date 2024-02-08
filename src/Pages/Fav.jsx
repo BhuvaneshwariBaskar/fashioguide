@@ -51,15 +51,15 @@ const Fav = ({ user }) => {
     useEffect(() => {
         getWishlist(user.user_id).then((res) => {
             console.log(res);
-            setWishlist(res.data.wishlist);
-           
+            setWishlist(res.data.WishList);
+
         });
     }, []);
-
+console.log(wishlist);
 
     return (
         <>
-            <Navbar2></Navbar2>
+
 
             <section className="bg-[#EEEEEE]">
                 {/* Navbar */}

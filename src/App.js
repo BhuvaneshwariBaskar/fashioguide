@@ -28,8 +28,8 @@ function App() {
             <Route path="/singlecollection" element={<SingleCollection user={user}/>} />
             <Route path="/category" element={<Category />} />
             <Route path="/collections" element={<Collection user={user} />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/fav" element={<Fav />} />
+            <Route path="/cart" element={<Cart user={user} />} />
+            <Route path="/fav" element={<Fav user={user}/>} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="tryon" element={<TryOn />} />

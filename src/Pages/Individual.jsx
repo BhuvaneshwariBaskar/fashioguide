@@ -47,7 +47,7 @@ const Individual = ({ user }) => {
   };
 
 
-  
+
   const handleAddToCart = async (actionType) => {
     let currentCart = user.bag ? user.bag : [];
     let updatedCart;
@@ -66,7 +66,7 @@ const Individual = ({ user }) => {
         payload: { ...user, bag: updatedCart },
       });
     } catch (error) {
-      console.error('Error adding to wishlist:', error.message);
+      console.error('Error adding to cart:', error.message);
     }
   };
   
