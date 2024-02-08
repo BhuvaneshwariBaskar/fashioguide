@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar.component";
-import korean from "../assests/korean.png"
-import Black from "../assests/Black.png"
-import White from "../assests/white.png"
-import Kid from "../assests/kid.png"
+import korean from "../asset/korean.png"
+import Black from "../asset/Black.png"
+import White from "../asset/white.png"
+import Kid from "../asset/kid.png"
 import Navbar2 from "../components/Navbar/Navbar2.component";
 import { Link } from 'react-router-dom';
 
