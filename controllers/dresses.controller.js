@@ -66,7 +66,7 @@ exports.addWishList = async (req, res) => {
     let user = await User.findOne({ where: { user_id } });
     console.log(user_id);
     console.log(user);
-  
+
     if (!user) {
       return res.status(401).json({
         error: "User not found",
@@ -83,6 +83,34 @@ exports.addWishList = async (req, res) => {
   }
 };
 
+//getwishlist
+
+exports.getWishList = async (req, res) => {
+  try {
+    const { user_id } = req.body;
+    console.log(user_id);
+    const user = await User.findOne({ where: { user_id } });
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+    let wishlist = user.wishlist;
+    console.log(wishlist);
+    const WishList = await Dress.findAll({
+      where: {
+        dress_id: {
+          [Op.in]: wishlist,
+        },
+      },
+    });
+    console.log(WishList);
+    return res.status(200).json({ message: "Okay", WishList });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+//addorders
 exports.orders = async (req, res) => {
   try {
     const { order, user_id } = req.body;
@@ -102,3 +130,5 @@ exports.orders = async (req, res) => {
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+//getorders
