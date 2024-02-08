@@ -16,6 +16,6 @@ router.route("/wishlist").post(addWishList);
 router.route("/orders").post(orders);
 router.route("/login").post(login);
 router.route("/addcart").post(addRemoveCart);
-router.route("/getcart").get(getCart);
+router.route("/getcart").post(getCart);
 
 module.exports = router;

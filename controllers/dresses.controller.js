@@ -34,12 +34,12 @@ exports.addRemoveCart = async (req, res) => {
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
 //GetCart
 exports.getCart = async (req, res) => {
   try {
     const { user_id } = req.body;
     console.log(user_id);
+  
     const user = await User.findOne({ where: { user_id } });
     if (!user) {
       return res.status(404).json({ error: "User not found" });
