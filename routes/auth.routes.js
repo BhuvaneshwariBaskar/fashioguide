@@ -3,7 +3,8 @@ const {
   fetchDress,
   addWishList,
   orders,
-  addRemoveCart,
+  addToCart,
+  removeFromCart,
   getCart,
   getWishList,
 } = require("../controllers/dresses.controller");
@@ -17,7 +18,8 @@ router.route("/wishlist").post(addWishList);
 router.route("/getwishlist").post(getWishList);
 router.route("/orders").post(orders);
 router.route("/login").post(login);
-router.route("/addcart").post(addRemoveCart);
+router.route("/addcart").post(addToCart);
+router.route("/removecart").post(removeFromCart);
 router.route("/getcart").post(getCart);
 
 module.exports = router;
