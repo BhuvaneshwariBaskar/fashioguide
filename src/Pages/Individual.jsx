@@ -174,7 +174,7 @@ const Individual = ({ user }) => {
                   Quantity:
                 </h1>
                 <button
-                  onClick={() => handleDecrement(quantity)}
+                  onClick={() => handleDecrement()}
                   className="bg-gray-500 text-white px-2 py-1 rounded"
                 >
                   -
@@ -186,7 +186,7 @@ const Individual = ({ user }) => {
                   className="w-12 text-center bg-gray-100 outline-none"
                 />
                 <button
-                  onClick={() => handleIncrement(quantity)}
+                  onClick={() => handleIncrement()}
                   className="bg-red-500 text-white px-2 py-1 rounded"
                 >
                   +

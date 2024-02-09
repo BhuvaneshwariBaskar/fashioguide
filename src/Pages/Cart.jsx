@@ -5,49 +5,54 @@ import Navbar2 from "../components/Navbar/Navbar2.component";
 import { getCart } from "../axios/dress.axios";
 // import { addRemoveCart } from "../axios/user.axios";
 import { useDispatch } from "react-redux";
+import { removeFromCart } from "../axios/user.axios";
 
 const Cart = ({ user }) => {
-
   const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [indiv, setIndiv] = useState([]);
 
   useEffect(() => {
     getCart(user.user_id).then((res) => {
-      setIndiv(res.data.DressList || []); // Set indiv to res.DressList if it exists, otherwise set it to an empty array
+      const updatedIndiv = res.data.DressList || [];
+      setIndiv(updatedIndiv);
     });
   }, []);
-  const handleIncrement = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
+  const handleIncrement = (index) => {
+    const updatedIndiv = [...indiv];
+    indiv[index].quantity += 1;
+    setIndiv(updatedIndiv);
   };
 
-  const handleDecrement = () => {
-    if (quantity > 0) {
-      setQuantity((prevQuantity) => prevQuantity - 1);
+  const handleDecrement = (index) => {
+    const updatedIndiv = [...indiv];
+    if (updatedIndiv[index].quantity > 1) {
+      updatedIndiv[index].quantity -= 1;
+      setIndiv(updatedIndiv);
     }
   };
-  const handleAddToCart = async (actionType,dress_id) => {
-    let currentCart = user.bag ? user.bag : [];
-    let updatedCart;
-    console.log(currentCart);
-    if (actionType === "remove") {
-      updatedCart = currentCart.filter(
-        (item) => item.dress_id !== dress_id
-      );
+  const handleRemoveFromCart = async (dressdata) => {
+    const item = [
+      {
+        dress_id: dressdata.dress.dress_id,
+        size: dressdata.size,
+        quantity: dressdata.quantity,
+        price: dressdata.price,
+      },
+    ];
+    try {
+      const response = await removeFromCart(item, user.user_id);
+      console.log(response);
+      dispatch({
+        type: "CREATE_USER",
+        payload: { ...user, bag: response.data.userbag },
+      });
+      window.location.reload();
+    } catch (error) {
+      console.error("Error removing from cart:", error.message);
     }
-    console.log(updatedCart);
-    // try {
-    //   const response = await addRemoveCart(updatedCart, user.user_id);
-    //   console.log(response);
-    //   dispatch({
-    //     type: "CREATE_USER",
-    //     payload: { ...user, bag: updatedCart },
-    //   });
-    //   window.location.reload()
-    // } catch (error) {
-    //   console.error("Error adding to wishlist:", error.message);
-    // }
   };
+  console.log(indiv);
   return (
     <>
       <Navbar2></Navbar2>
@@ -70,9 +75,11 @@ const Cart = ({ user }) => {
                     Product
                   </th>
                   <th className="px-6 py-3 font-bold whitespace-nowrap">
+                    Size
+                  </th>
+                  <th className="px-6 py-3 font-bold whitespace-nowrap">
                     Quantity
                   </th>
-                  <th className="px-6 py-3 font-bold whitespace-nowrap">Size</th>
                   <th className="px-6 py-3 font-bold whitespace-nowrap">
                     Price
                   </th>
@@ -105,39 +112,37 @@ const Cart = ({ user }) => {
                           <h3>{item.size}</h3>
                         </div>
                       </td>
+
                       <td className="p-4 px-6 text-center whitespace-nowrap">
-                        <div className="flex flex-col items-center justify-center">
-                          <h3>{item.quantity}</h3>
+                        <div>
+                          <button
+                            onClick={() => handleDecrement(index)}
+                            className="bg-blue-500 text-white px-2 py-1 rounded"
+                          >
+                            -
+                          </button>
+                          <input
+                            type="text"
+                            name="qty"
+                            value={item.quantity}
+                            className="w-12 text-center bg-gray-100 outline-none"
+                          />
+                          <button
+                            onClick={() => handleIncrement(index)}
+                            className="bg-red-500 text-white px-2 py-1 rounded"
+                          >
+                            +
+                          </button>
                         </div>
                       </td>
-                      {/* <td className="p-4 px-6 text-center whitespace-nowrap">
-                      <div>
-                        <button
-                          onClick={() => handleDecrement(index)}
-                          className="bg-blue-500 text-white px-2 py-1 rounded"
-                        >
-                          -
-                        </button>
-                        <input
-                          type="text"
-                          name="qty"
-                          value={quantity}
-                          className="w-12 text-center bg-gray-100 outline-none"
-                        />
-                        <button
-                          onClick={() => handleIncrement(index)}
-                          className="bg-red-500 text-white px-2 py-1 rounded"
-                        >
-                          +
-                        </button>
-                      </div>
-                    </td> */}
                       <td className="p-4 px-6 text-center whitespace-nowrap">
-                        {item.price}
+                        <td className="p-4 px-6 text-center whitespace-nowrap">
+                          ₹ {item.dress.price * item.quantity}
+                        </td>
                       </td>
 
                       <td className="p-4 px-6 text-center whitespace-nowrap">
-                        <button onClick={() => handleAddToCart("remove",item.dress_id)}>
+                        <button onClick={() => handleRemoveFromCart(item)}>
                           <img
                             width="20"
                             height="20"
