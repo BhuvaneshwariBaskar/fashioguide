@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 import Navbar2 from "../components/Navbar/Navbar2.component";
 import { getCart } from "../axios/dress.axios";
-import { addRemoveCart } from "../axios/user.axios";
+// import { addRemoveCart } from "../axios/user.axios";
 import { useDispatch } from "react-redux";
 
 const Cart = ({ user }) => {
@@ -14,7 +14,6 @@ const Cart = ({ user }) => {
 
   useEffect(() => {
     getCart(user.user_id).then((res) => {
-      console.log(res);
       setIndiv(res.data.DressList || []); // Set indiv to res.DressList if it exists, otherwise set it to an empty array
     });
   }, []);
@@ -30,22 +29,24 @@ const Cart = ({ user }) => {
   const handleAddToCart = async (actionType,dress_id) => {
     let currentCart = user.bag ? user.bag : [];
     let updatedCart;
+    console.log(currentCart);
     if (actionType === "remove") {
       updatedCart = currentCart.filter(
-        (itemId) => itemId !== dress_id
+        (item) => item.dress_id !== dress_id
       );
     }
-    try {
-      const response = await addRemoveCart(updatedCart, user.user_id);
-      console.log(response);
-      dispatch({
-        type: "CREATE_USER",
-        payload: { ...user, bag: updatedCart },
-      });
-      window.location.reload()
-    } catch (error) {
-      console.error("Error adding to wishlist:", error.message);
-    }
+    console.log(updatedCart);
+    // try {
+    //   const response = await addRemoveCart(updatedCart, user.user_id);
+    //   console.log(response);
+    //   dispatch({
+    //     type: "CREATE_USER",
+    //     payload: { ...user, bag: updatedCart },
+    //   });
+    //   window.location.reload()
+    // } catch (error) {
+    //   console.error("Error adding to wishlist:", error.message);
+    // }
   };
   return (
     <>
@@ -68,6 +69,9 @@ const Cart = ({ user }) => {
                   <th className="px-6 py-3 font-bold whitespace-nowrap">
                     Product
                   </th>
+                  <th className="px-6 py-3 font-bold whitespace-nowrap">
+                    Quantity
+                  </th>
                   <th className="px-6 py-3 font-bold whitespace-nowrap">Size</th>
                   <th className="px-6 py-3 font-bold whitespace-nowrap">
                     Price
@@ -84,7 +88,7 @@ const Cart = ({ user }) => {
                       <td className="pt-3">
                         <div className="flex justify-center">
                           <img
-                            src={item.image}
+                            src={item.dress.image}
                             className="object-cover h-28 w-28 rounded-2xl"
                             alt="image"
                           />
@@ -92,13 +96,18 @@ const Cart = ({ user }) => {
                       </td>
                       <td className="p-4 px-6 text-center whitespace-nowrap">
                         <div className="flex flex-col items-center justify-center">
-                          <h3>{item.dress_name}</h3>
-                          <h3>{item.brand}</h3>
+                          <h3>{item.dress.dress_name}</h3>
+                          <h3>{item.dress.brand}</h3>
                         </div>
                       </td>
                       <td className="p-4 px-6 text-center whitespace-nowrap">
                         <div className="flex flex-col items-center justify-center">
-                          <h3>xl</h3>
+                          <h3>{item.size}</h3>
+                        </div>
+                      </td>
+                      <td className="p-4 px-6 text-center whitespace-nowrap">
+                        <div className="flex flex-col items-center justify-center">
+                          <h3>{item.quantity}</h3>
                         </div>
                       </td>
                       {/* <td className="p-4 px-6 text-center whitespace-nowrap">
