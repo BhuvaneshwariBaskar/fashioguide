@@ -34,3 +34,17 @@ export const getWishlist = async (user_id) =>
   await axios.post(`http://localhost:8080/api/getwishlist`, {
     user_id,
   });
+
+
+export const updateProfile = async (user_id,name, country, phone, gender,address, pincode) =>
+  await axios.post(`http://localhost:8080/api/profile`, {
+    user_id,
+    name,
+    country,
+    phone,
+    gender,
+    address,
+    pincode,
+    
+  });
+

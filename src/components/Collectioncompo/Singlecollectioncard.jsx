@@ -4,20 +4,17 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { IoIosHeart } from "react-icons/io";
 
 const Singlecollection = ({ dress, index }) => {
-  const[favorites,setFavorites]=useState(false);
+  const[isInFavorites,setisInFavorites]=useState(false);
   const navigate = useNavigate();
   const navigateToPage = (e) => {
     navigate('/individual', { state: { data: e } });
   }
   // const isInFavorites = userFavorites && userFavorites.includes(dress.dress_id);
 
-  useEffect(() => {
-    
-    const isInFav = user.bag.some(
-      (item) => item.dress_id === dress.dress_id
-    );
-    setFavorites(isInFav);
-  }, [user.wishlist, dress.dress_id]);
+  const handle = () => {
+    setisInFavorites(!isInFavorites);
+    // addToFavorites(index);
+  };
 
   // const handleRemoveFromFavorites = () => {
   //   removeFromFavorites(index);

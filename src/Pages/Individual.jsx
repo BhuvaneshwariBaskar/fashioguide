@@ -214,14 +214,14 @@ const Individual = ({ user }) => {
                 {fav ? (
                   <button
                     className="bg-black text-white p-3"
-                    onClick={handleAddToWishlist}
+                    onClick={()=>handleAddToWishlist}
                   >
                     Remove from Wishlist
                   </button>
                 ) : (
                   <button
                     className="bg-black text-white p-3"
-                    onClick={handleAddToWishlist}
+                    onClick={()=>handleAddToWishlist}
                   >
                     Add to Wishlist
                   </button>
