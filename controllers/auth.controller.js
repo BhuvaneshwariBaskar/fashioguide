@@ -104,4 +104,34 @@ exports.login = async (req, res) => {
 
 };
 
+//profile page 
+exports.updateProfile = async (req, res) => {
+  try {
+    const { user_id, name, country, phone, gender, address, pincode } = req.body;
+
+    let user = await User.findByPk(user_id);
+
+    if (!user) {
+      return res.status(401).json({
+        error: "User not found",
+      });
+    }
+
+    // Update the profile information
+    user.user_id = user_id;
+    user.name = name;
+    user.country = country;
+    user.phone = phone;
+    user.gender = gender;
+    user.address = address;
+    user.pincode = pincode;
+
+    await user.save();
+
+    return res.json("Profile updated successfully");
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: error.message, stack: error.stack });
+  }
+};
 

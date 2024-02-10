@@ -113,6 +113,9 @@ exports.getCart = async (req, res) => {
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+//addwishlist
+
 exports.addWishList = async (req, res) => {
   try {
     const { wishlist, user_id } = req.body;
@@ -135,6 +138,12 @@ exports.addWishList = async (req, res) => {
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+//removewishlist
+
+
+
+
 
 //getwishlist
 
