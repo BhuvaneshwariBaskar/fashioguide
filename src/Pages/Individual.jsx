@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Navbar2 from "../components/Navbar/Navbar2.component";
 import { useLocation } from "react-router-dom";
-import { addToCart, addWishlist, removeFromCart } from "../axios/user.axios";
+import {
+  addRemoveToCart,
+  addRemoveWishlist,
+  addWishlist,
+} from "../axios/user.axios";
 import { useDispatch } from "react-redux";
 
 const Individual = ({ user }) => {
@@ -17,31 +21,34 @@ const Individual = ({ user }) => {
   var itemsize = ["XS", "S", "M", "L", "XL"];
 
   useEffect(() => {
-    // Check if the dress_id is already in the cart when component mounts
-    const isInCart = user.bag.some(
-      (item) => item.dress_id === passedData.dress_id
-    );
-    setCart(isInCart);
-  }, [user.bag, passedData.dress_id]);
+    if (user && user.bag && user.wishlist && passedData) {
+      const isInCart = user.bag.some(
+        (item) => item.dress_id === passedData.dress_id
+      );
+      setCart(isInCart);
+      const isInFav = user.wishlist.some(
+        (item) => item.dress_id === passedData.dress_id
+      );
+      setFav(isInFav);
+    }
+  }, [user, passedData]);
 
-  const handleAddToWishlist = async () => {
-    setFav(!fav);
-    let currentWishlist = user.wishlist ? user.wishlist : [];
-    console.log("Current wishlist:", currentWishlist);
-
-    const updatedWishlist = [...currentWishlist, passedData.dress_id];
-
+  const handleAddToWishlist = async (action) => {
     try {
-      const response = await addWishlist(updatedWishlist, user.user_id);
-      const updatedUser = response.data;
+      let response;
+      if (action === "add") {
+        response = await addRemoveWishlist([passedData.dress_id], user.user_id, action);
+        setCart(true);
+      } else if (action === "remove") {
+        response = await addRemoveWishlist([passedData.dress_id], user.user_id, action);
+        setCart(false);
+      }
       dispatch({
         type: "CREATE_USER",
-        payload: { ...user, wishlist: updatedWishlist },
+        payload: { ...user, wishlist: response.data.wishlist },
       });
-
-      console.log("Item added to wishlist successfully:", updatedUser);
     } catch (error) {
-      console.error("Error adding to wishlist:", error.message);
+      console.error("Error adding to cart:", error.message);
     }
   };
   const handleIncrement = () => {
@@ -53,60 +60,31 @@ const Individual = ({ user }) => {
       setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
-  const handleAddToCart = async () => {
+  const handleAddToCart = async (action) => {
     // Check if the dress_id already exists in the cart
-    const isInCart = user.bag.some(
-      (item) => item.dress_id === passedData.dress_id
-    );
-
-    if (isInCart) {
-      console.log("Item is already in the cart");
-      // Handle the case where the item is already in the cart
-    } else {
-      // Item is not in the cart, add it
-      const item = {
-        dress_id: passedData.dress_id,
-        size: selectedSize,
-        quantity: quantity,
-        price: passedData.price,
-      };
-
-      try {
-        const response = await addToCart([item], user.user_id);
-        console.log(response);
-        dispatch({
-          type: "CREATE_USER",
-          payload: { ...user, bag: response.data.userbag },
-        });
-        setCart(true);
-      } catch (error) {
-        console.error("Error adding to cart:", error.message);
-      }
-    }
-  };
-
-  const handleRemoveFromCart = async () => {
-    const item = [
-      {
-        dress_id: passedData.dress_id,
-        size: selectedSize,
-        quantity: quantity,
-        price: passedData.price,
-      },
-    ];
+    const item = {
+      dress_id: passedData.dress_id,
+      size: selectedSize,
+      quantity: quantity,
+      price: passedData.price,
+    };
     try {
-      const response = await removeFromCart(item, user.user_id);
-      console.log(response);
+      let response;
+      if (action === "add") {
+        response = await addRemoveToCart([item], user.user_id, action);
+        setCart(true);
+      } else if (action === "remove") {
+        response = await addRemoveToCart([item], user.user_id, action);
+        setCart(false);
+      }
       dispatch({
         type: "CREATE_USER",
         payload: { ...user, bag: response.data.userbag },
       });
-      setCart(false);
     } catch (error) {
-      console.error("Error removing from cart:", error.message);
+      console.error("Error adding to cart:", error.message);
     }
   };
-
   return (
     <>
       <div className="bg-[#EEEEEE]">
@@ -196,14 +174,14 @@ const Individual = ({ user }) => {
                 {cart ? (
                   <button
                     className="bg-black text-white p-3 mr-2"
-                    onClick={() => handleRemoveFromCart()}
+                    onClick={() => handleAddToCart("remove")}
                   >
                     Remove from Cart
                   </button>
                 ) : (
                   <button
                     className="bg-black text-white p-3 mr-2"
-                    onClick={() => handleAddToCart()}
+                    onClick={() => handleAddToCart("add")}
                   >
                     Add to Cart
                   </button>
@@ -214,14 +192,14 @@ const Individual = ({ user }) => {
                 {fav ? (
                   <button
                     className="bg-black text-white p-3"
-                    onClick={handleAddToWishlist}
+                    onClick={() => handleAddToWishlist("remove")}
                   >
                     Remove from Wishlist
                   </button>
                 ) : (
                   <button
                     className="bg-black text-white p-3"
-                    onClick={handleAddToWishlist}
+                    onClick={() => handleAddToWishlist("add")}
                   >
                     Add to Wishlist
                   </button>
