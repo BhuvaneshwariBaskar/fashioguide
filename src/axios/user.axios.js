@@ -14,21 +14,24 @@ export const login = (email, password) =>
     password,
   });
 
-export const addWishlist = async (wishlist, user_id) =>
+export const addRemoveWishlist = async (dress_id, user_id, action) => 
   await axios.post(`http://localhost:8080/api/wishlist`, {
-    wishlist,
+    dress_id,
     user_id,
+    action
   });
 
-export const addToCart = async (item, user_id) =>
-  await axios.post(`http://localhost:8080/api/addcart`, {
+export const addRemoveToCart = async (item, user_id,action) =>
+  await axios.post(`http://localhost:8080/api/addremovecart`, {
     item,
     user_id,
+    action
   });
-export const removeFromCart = async (item, user_id) =>
+  export const RemoveFromCart = async (item, user_id) =>
   await axios.post(`http://localhost:8080/api/removecart`, {
     item,
-    user_id,
+    user_id
+    
   });
 export const getWishlist = async (user_id) =>
   await axios.post(`http://localhost:8080/api/getwishlist`, {
