@@ -3,7 +3,7 @@ const {
   fetchDress,
   addWishList,
   orders,
-  addToCart,
+  addRemoveToCart,
   removeFromCart,
   getCart,
   getWishList,
@@ -18,7 +18,7 @@ router.route("/wishlist").post(addWishList);
 router.route("/getwishlist").post(getWishList);
 router.route("/orders").post(orders);
 router.route("/login").post(login);
-router.route("/addcart").post(addToCart);
+router.route("/addremovecart").post(addRemoveToCart);
 router.route("/removecart").post(removeFromCart);
 router.route("/getcart").post(getCart);
 

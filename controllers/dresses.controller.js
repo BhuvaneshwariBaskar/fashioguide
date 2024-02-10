@@ -16,43 +16,31 @@ exports.fetchDress = async (req, res) => {
   }
 };
 
-// exports.addRemoveCart = async (req, res) => {
-//   try {
-//     const { bag, user_id } = req.body; // Remove the extra nesting
-//     console.log(user_id);
-//     const user = await User.findOne({ where: { user_id } });
-//     if (!user) {
-//       return res.status(404).json({ error: "User not found" });
-//     }
-//     user.bag = bag;
-//     await user.save();
-
-//     //remove wishlist-get
-//     return res.json("OKAY");
-//   } catch (error) {
-//     console.error(error);
-//     return res.status(500).json({ error: "Internal Server Error" });
-//   }
-// };
-exports.addToCart = async (req, res) => {
+exports.addRemoveToCart = async (req, res) => {
   try {
-    const { item, user_id } = req.body; 
+    const { item, user_id, action } = req.body;
     console.log(item);
     const user = await User.findOne({ where: { user_id } });
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
-    // Add items to the cart
-    user.bag = [...user.bag,...item]; 
-    await user.save();
-
-    return res.json({"message":"success","userbag":user.bag});
+    // Add or remove items to the cart
+    if (action == "add") {
+      user.bag = [...user.bag, ...item];
+      await user.save();
+    } else if (action == "remove") {
+      item.forEach((itemToRemove) => {
+        user.bag = user.bag.filter(
+          (cartItem) => cartItem.dress_id !== itemToRemove.dress_id
+        );
+      });
+    }
+    return res.json({ message: "success", userbag: user.bag });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
 
 exports.removeFromCart = async (req, res) => {
   try {
@@ -65,8 +53,10 @@ exports.removeFromCart = async (req, res) => {
     }
 
     // Remove each item from the cart
-    item.forEach(itemToRemove => {
-      user.bag = user.bag.filter(cartItem => cartItem.dress_id !== itemToRemove.dress_id);
+    item.forEach((itemToRemove) => {
+      user.bag = user.bag.filter(
+        (cartItem) => cartItem.dress_id !== itemToRemove.dress_id
+      );
     });
 
     await user.save();
@@ -77,7 +67,6 @@ exports.removeFromCart = async (req, res) => {
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
 
 //GetCart
 exports.getCart = async (req, res) => {
@@ -113,23 +102,28 @@ exports.getCart = async (req, res) => {
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+
 exports.addWishList = async (req, res) => {
   try {
-    const { wishlist, user_id } = req.body;
-    let user = await User.findOne({ where: { user_id } });
-    console.log(user_id);
-    console.log(user);
-
+    const { dress_id, user_id, action } = req.body;
+    console.log(dress_id,action);
+    const user = await User.findOne({ where: { user_id } });
     if (!user) {
-      return res.status(401).json({
-        error: "User not found",
+      return res.status(404).json({ error: "User not found" });
+    }
+    // Add or remove items to the cart
+    if (action == "add") {
+      user.wishlist = [...user.wishlist, ...dress_id];
+      await user.save();
+    } else if (action == "remove") {
+      dress_id.forEach((itemToRemove) => {
+        user.wishlist = user.wishlist.filter(
+          (item) => item.dress_id !== itemToRemove.dress_id
+        );
       });
     }
-
-    user.wishlist = wishlist;
-    await user.save();
-
-    return res.json("OKAY");
+    return res.json({ message: "success", userwishlist: user.wishlist });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "Internal Server Error" });
