@@ -8,7 +8,7 @@ const {
   getCart,
   getWishList,
 } = require("../controllers/dresses.controller");
-const { signUpPost, login } = require("../controllers/auth.controller");
+const { signUpPost, login, updateProfile } = require("../controllers/auth.controller");
 
 const router = express.Router();
 
@@ -22,5 +22,6 @@ router.route("/getcart").post(getCart);
 router.route("/wishlist").post(addRemoveWishlist);
 router.route("/getwishlist").post(getWishList);
 router.route("/orders").post(orders);
+router.route("/profile").post(updateProfile);
 
 module.exports = router;

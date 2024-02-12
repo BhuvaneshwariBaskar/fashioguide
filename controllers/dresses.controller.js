@@ -103,6 +103,7 @@ exports.getCart = async (req, res) => {
   }
 };
 
+//addwishlist
 
 exports.addRemoveWishlist = async (req, res) => {
   try {
