@@ -104,31 +104,36 @@ exports.getCart = async (req, res) => {
 };
 
 
-exports.addWishList = async (req, res) => {
+exports.addRemoveWishlist = async (req, res) => {
   try {
     const { dress_id, user_id, action } = req.body;
-    console.log(dress_id,action);
+    console.log(dress_id, user_id, action);
     const user = await User.findOne({ where: { user_id } });
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
-    // Add or remove items to the cart
-    if (action == "add") {
-      user.wishlist = [...user.wishlist, ...dress_id];
-      await user.save();
-    } else if (action == "remove") {
+
+    // Add or remove items from the wishlist
+    if (action === "add") {
+      if (!user.wishlist.includes(dress_id)) {
+        user.wishlist=[...user.wishlist,...dress_id];
+        await user.save();
+      }
+    } else if (action === "remove") {
       dress_id.forEach((itemToRemove) => {
-        user.wishlist = user.wishlist.filter(
-          (item) => item.dress_id !== itemToRemove.dress_id
-        );
+        user.wishlist = user.wishlist.filter(item => item !== itemToRemove);
       });
+      console.log(user.wishlist);
+      await user.save();
     }
-    return res.json({ message: "success", userwishlist: user.wishlist });
+
+    return res.json({ message: "success", wishlist: user.wishlist });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
 
 //getwishlist
 
