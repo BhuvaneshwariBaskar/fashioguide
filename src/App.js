@@ -25,7 +25,7 @@ function App() {
           <>
             <Route path="/" element={<Home />} />
             <Route path="/individual" element={<Individual user={user}/>} />
-            <Route path="/singlecollection" element={<SingleCollection user={user}/>} />
+            <Route path="/singlecollection" element={<SingleCollection user={user} />} />
             <Route path="/category" element={<Category />} />
             <Route path="/collections" element={<Collection user={user} />} />
             <Route path="/cart" element={<Cart user={user} />} />

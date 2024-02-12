@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import {
   addRemoveToCart,
   addRemoveWishlist,
-  addWishlist,
 } from "../axios/user.axios";
 import { useDispatch } from "react-redux";
 
@@ -21,27 +20,30 @@ const Individual = ({ user }) => {
   var itemsize = ["XS", "S", "M", "L", "XL"];
 
   useEffect(() => {
-    if (user && user.bag && user.wishlist && passedData) {
+    if (user && user.bag && passedData) {
+      const isInFav = user.wishlist.some(
+        (item) => item === passedData.dress_id
+      );
+      setFav(isInFav);
       const isInCart = user.bag.some(
         (item) => item.dress_id === passedData.dress_id
       );
       setCart(isInCart);
-      const isInFav = user.wishlist.some(
-        (item) => item.dress_id === passedData.dress_id
-      );
-      setFav(isInFav);
+ 
     }
   }, [user, passedData]);
+  
 
   const handleAddToWishlist = async (action) => {
     try {
       let response;
       if (action === "add") {
+        setFav(true);
         response = await addRemoveWishlist([passedData.dress_id], user.user_id, action);
-        setCart(true);
       } else if (action === "remove") {
+        setFav(false);
         response = await addRemoveWishlist([passedData.dress_id], user.user_id, action);
-        setCart(false);
+        
       }
       dispatch({
         type: "CREATE_USER",
@@ -220,4 +222,4 @@ const Individual = ({ user }) => {
 };
 
 export default Individual;
-//fav=false->add to wishlist->true(remove from wish list)
+

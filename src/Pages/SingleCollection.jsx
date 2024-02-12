@@ -24,7 +24,7 @@ const SingleCollection = ({user}) => {
       <div class="ml-[5%] mt-[3%] position:relative justify-center items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {dressData &&
             dressData.map((dress, index) => (
-              <Singlecollection dress={dress} index={index} />
+              <Singlecollection dress={dress} user={user}/>
             ))}
         </div>
     </section>
