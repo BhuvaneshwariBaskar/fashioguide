@@ -17,6 +17,7 @@ const Login = () => {
         setEmail("");
         setPassword("");
         toast.success("Login successful");
+        console.log(res.data);
         //dispatchEvent
         dispatch({
           type: "CREATE_USER",

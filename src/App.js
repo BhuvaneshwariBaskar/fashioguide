@@ -30,7 +30,7 @@ function App() {
             <Route path="/collections" element={<Collection user={user} />} />
             <Route path="/cart" element={<Cart user={user} />} />
             <Route path="/fav" element={<Fav user={user}/>} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile user={user} />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="tryon" element={<TryOn />} />
           </>
