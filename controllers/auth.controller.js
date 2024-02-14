@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { User } = require("../database/database");
+const nodemailer = require('nodemailer');
 
 exports.signUpPost = async (req, res) => {
   try {
@@ -134,4 +135,38 @@ exports.updateProfile = async (req, res) => {
     return res.status(500).json({ error: error.message, stack: error.stack });
   }
 };
+
+//email
+
+
+exports.sendEmail = async (req, res) => {
+    const { to, subject, text } = req.body;
+
+    // Create nodemailer transporter
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'ksgopika02@gmail.com', // replace with your Gmail email
+            pass: 'miracle03$@$' // replace with your Gmail password
+        }
+    });
+
+    // Email configuration
+    const mailOptions = {
+        from: 'ksgopika02@gmail.com',
+        to:user.email,
+        subject: 'Order Confirmation',
+        text: 'Thank you for your order!'
+    };
+
+    try {
+        // Send email
+        await transporter.sendMail(mailOptions);
+        res.status(200).json({ message: 'Email sent successfully' });
+    } catch (error) {
+        console.error('Error sending email:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
 
