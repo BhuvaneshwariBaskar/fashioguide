@@ -4,13 +4,15 @@ import { useEffect } from "react";
 import Navbar2 from "../components/Navbar/Navbar2.component";
 import { getCart } from "../axios/dress.axios";
 // import { addRemoveCart } from "../axios/user.axios";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { RemoveFromCart, sendEmail } from "../axios/user.axios";
 
 const Cart = ({ user }) => {
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const [indiv, setIndiv] = useState([]);
+  const [payment, setPayment] = useState("")
 
   useEffect(() => {
     getCart(user.user_id).then((res) => {
@@ -19,6 +21,11 @@ const Cart = ({ user }) => {
     });
   }, []);
 
+  const navigateToPage=(e)=>{
+    if(payment==="upiPay"){
+      navigate('/payment', { state: { data: e } });
+    }
+  }
   let totalPrice = indiv.reduce(
     (total, item) => total + parseFloat(item.price) * item.quantity,
     0
@@ -77,8 +84,8 @@ const Cart = ({ user }) => {
     <>
       <Navbar2></Navbar2>
       <div className="flex flex-row">
-        <div className="w-8/12 h-auto flex items-start justify-center p-4">
-          <div className="w-[70%] ">
+        <div className="w-8/12 h-auto flex items-start justify-center">
+          <div className="">
             <div className="my-2">
               <h3 className="text-4xl font-bold tracking-wider  px-10 mb-6">
                 Shopping Cart
@@ -200,13 +207,24 @@ const Cart = ({ user }) => {
             </div>
 
             <div className="flex justify-between mb-2">
-              <div>Delivary</div>
+              <div>Delivery</div>
               <div>₹ 65</div>
             </div>
 
             <div className="flex justify-between mt-4">
               <div className="text-red-500">Total</div>
               <div className="text-red-500">₹ {totalPrice + discount}</div>
+            </div>
+
+            {/* Payment method selection */}
+            <div className="mt-4 flex relative items-center justify-around">
+              <label htmlFor="paymentMethod" className="block mb-2">
+                Payment Method:
+              </label>
+              <select id="paymentMethod" className="border rounded px-2 py-1" onSelect={()=>setPayment(document.getElementById("paymentMethod").value)} >
+                <option value="cashOnDelivery">Cash on Delivery</option>
+                <option value="upiPay">UPI Pay</option>
+              </select>
             </div>
           </div>
           <div className="flex items-center justify-center mt-5">

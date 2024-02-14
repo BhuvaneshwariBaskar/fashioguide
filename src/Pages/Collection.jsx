@@ -7,6 +7,7 @@ import CircleSlider from "../components/swiper/Swiper";
 import { Category } from "../utils/category";
 
 const Collection = ({user}) => {
+  console.log(user);
   const [womenDress, setWomenDress] = useState([]);
   const [menDress, setMenDress] = useState([]);
   // console.log(Category);
