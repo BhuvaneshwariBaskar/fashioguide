@@ -1,7 +1,7 @@
 const express = require("express");
 const {
   fetchDress,
-  addWishList,
+  addRemoveWishlist,
   orders,
   addRemoveToCart,
   removeFromCart,
@@ -12,15 +12,16 @@ const { signUpPost, login, updateProfile, sendEmail } = require("../controllers/
 
 const router = express.Router();
 
-router.route("/register").post(signUpPost);
+
 router.route("/dress").get(fetchDress);
-router.route("/wishlist").post(addWishList);
-router.route("/getwishlist").post(getWishList);
-router.route("/orders").post(orders);
+router.route("/register").post(signUpPost);
 router.route("/login").post(login);
 router.route("/addremovecart").post(addRemoveToCart);
 router.route("/removecart").post(removeFromCart);
 router.route("/getcart").post(getCart);
+router.route("/wishlist").post(addRemoveWishlist);
+router.route("/getwishlist").post(getWishList);
+router.route("/orders").post(orders);
 router.route("/profile").post(updateProfile);
 router.route("/mail").post(sendEmail);
 
