@@ -5,7 +5,7 @@ import Navbar2 from "../components/Navbar/Navbar2.component";
 import { getCart } from "../axios/dress.axios";
 // import { addRemoveCart } from "../axios/user.axios";
 import { useDispatch } from "react-redux";
-import { RemoveFromCart } from "../axios/user.axios";
+import { RemoveFromCart, sendEmail } from "../axios/user.axios";
 
 const Cart = ({ user }) => {
   const dispatch = useDispatch();
@@ -59,6 +59,20 @@ const Cart = ({ user }) => {
       console.error("Error adding to cart:", error.message);
     }
   };
+
+  const handleProceedToPay = async () => {
+    const emailData = {
+      to: user.email, 
+      subject: 'Order Confirmation',
+      text: 'Thank you for your order!'
+    };
+    try {
+        const response = await sendEmail(emailData);
+        console.log(response.message);
+      } catch (error) {
+        console.error('Error sending email:', error);
+      }
+}
   return (
     <>
       <Navbar2></Navbar2>
@@ -196,7 +210,8 @@ const Cart = ({ user }) => {
             </div>
           </div>
           <div className="flex items-center justify-center mt-5">
-            <button className="bg-red-500 text-white py-2 px-4 mt-4 rounded">
+            <button className="bg-red-500 text-white py-2 px-4 mt-4 rounded"
+             onClick={handleProceedToPay}>
               Proceed to Pay
             </button>
           </div>

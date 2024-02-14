@@ -51,3 +51,14 @@ export const updateProfile = async (user_id,name, country, phone, gender,address
     
   });
 
+  export const sendEmail = async (emailData) => {
+    try {
+      const response = await axios.post(`http://localhost:8080/api/email`, emailData);
+      console.log(response.data.message);
+      return response.data;
+    } catch (error) {
+      console.error('Error sending email:', error);
+      throw error;
+    }
+  };
+
