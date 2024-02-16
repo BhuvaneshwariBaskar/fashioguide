@@ -4,7 +4,7 @@ const db = require('./database/database');
 const cors = require("cors");
 const morgan = require("morgan");
 const bodyParser = require('body-parser');
-
+const stripe= require("stripe") (process.env.STRIPE_SECRET);
 
 const authRoute = require("./routes/auth.routes");
 

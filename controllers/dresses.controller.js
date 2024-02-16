@@ -117,12 +117,12 @@ exports.addRemoveWishlist = async (req, res) => {
     // Add or remove items from the wishlist
     if (action === "add") {
       if (!user.wishlist.includes(dress_id)) {
-        user.wishlist=[...user.wishlist,...dress_id];
+        user.wishlist = [...user.wishlist, ...dress_id];
         await user.save();
       }
     } else if (action === "remove") {
       dress_id.forEach((itemToRemove) => {
-        user.wishlist = user.wishlist.filter(item => item !== itemToRemove);
+        user.wishlist = user.wishlist.filter((item) => item !== itemToRemove);
       });
       console.log(user.wishlist);
       await user.save();
@@ -134,7 +134,6 @@ exports.addRemoveWishlist = async (req, res) => {
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
 
 //getwishlist
 
@@ -185,3 +184,27 @@ exports.orders = async (req, res) => {
 };
 
 //getorders
+
+//Payment
+// const makePayment = async (res, req) => {
+//   const { products } = req.body;
+//   const lineItems = products.map((product) => ({
+//     price_data: {
+//       currency: "usd",
+//       product_data: {
+//         name: product.name,
+//         images: [product.image],
+//       },
+//       unit_amount: product.price * 100,
+//     },
+//     quantity: product.quantity,
+//   }));
+//   const session = await stripe.checkout.sessions.create({
+//     payment_method_types: ["card", "upi"],
+//     line_items: lineItems,
+//     mode: "payment",
+//     success_url: "http://localhost: 3000/success",
+//     cancel_url: "http://localhost:3000/cancel",
+//   });
+//   res.json({ id: session.id });
+// };

@@ -7,6 +7,7 @@ const {
   removeFromCart,
   getCart,
   getWishList,
+  makePayment
 } = require("../controllers/dresses.controller");
 const { signUpPost, login, updateProfile, sendEmail } = require("../controllers/auth.controller");
 
@@ -24,5 +25,5 @@ router.route("/getwishlist").post(getWishList);
 router.route("/orders").post(orders);
 router.route("/profile").post(updateProfile);
 router.route("/mail").post(sendEmail);
-
+// router.post("/create-checkout-session").post(makePayment);
 module.exports = router;
