@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../asset/logo.png";
+import axios from "axios";
 
 
 const Navbar2 = () => {
@@ -9,7 +10,17 @@ const Navbar2 = () => {
   const handleIconClick = () => {
     setDropdownVisible(!isDropdownVisible);
   };
+  const HandleRecommendation = () => {
 
+    axios
+      .post("http://localhost:5000/recommendation")
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error("Error", error);
+      });
+  };
   return (
     <nav className="bg-transparent p-4 flex justify-between items-center">
       <div>
@@ -25,7 +36,7 @@ const Navbar2 = () => {
         
         <Link to="/category">Category</Link>
 
-        <Link to="/recommendation">Get Recommendation</Link>
+        <Link to="/recommendation" onClick={()=>HandleRecommendation()}>Get Recommendation</Link>
         <Link to="/tryon">Try On</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/">

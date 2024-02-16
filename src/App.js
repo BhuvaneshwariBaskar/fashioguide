@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 import TryOn from "./Pages/TryOn";
 import Fav from "./Pages/Fav";
 
+
 function App() {
   const { user } = useSelector((state) => ({ ...state }));
 
@@ -32,7 +33,8 @@ function App() {
             <Route path="/fav" element={<Fav user={user}/>} />
             <Route path="/profile" element={<Profile user={user} />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="tryon" element={<TryOn />} />
+            <Route path="/tryon" element={<TryOn />} />
+            <Route path="/recommendation" />
           </>
         ) : (
           <>

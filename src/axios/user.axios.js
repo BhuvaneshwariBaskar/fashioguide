@@ -14,32 +14,38 @@ export const login = (email, password) =>
     password,
   });
 
-export const addRemoveWishlist = async (dress_id, user_id, action) => 
+export const addRemoveWishlist = async (dress_id, user_id, action) =>
   await axios.post(`http://localhost:8080/api/wishlist`, {
     dress_id,
     user_id,
-    action
+    action,
   });
 
-export const addRemoveToCart = async (item, user_id,action) =>
+export const addRemoveToCart = async (item, user_id, action) =>
   await axios.post(`http://localhost:8080/api/addremovecart`, {
     item,
     user_id,
-    action
+    action,
   });
-  export const RemoveFromCart = async (item, user_id) =>
+export const RemoveFromCart = async (item, user_id) =>
   await axios.post(`http://localhost:8080/api/removecart`, {
     item,
-    user_id
-    
+    user_id,
   });
 export const getWishlist = async (user_id) =>
   await axios.post(`http://localhost:8080/api/getwishlist`, {
     user_id,
   });
 
-
-export const updateProfile = async (user_id,name, country, phone, gender,address, pincode) =>
+export const updateProfile = async (
+  user_id,
+  name,
+  country,
+  phone,
+  gender,
+  address,
+  pincode
+) =>
   await axios.post(`http://localhost:8080/api/profile`, {
     user_id,
     name,
@@ -48,17 +54,22 @@ export const updateProfile = async (user_id,name, country, phone, gender,address
     gender,
     address,
     pincode,
-    
   });
+// export const makePayment = async (products) =>
+//   await axios.post(`http://localhost:8080/api/create-checkout-session`, {
+//     products,
+//   });
 
-  export const sendEmail = async (emailData) => {
-    try {
-      const response = await axios.post(`http://localhost:8080/api/email`, emailData);
-      console.log(response.data.message);
-      return response.data;
-    } catch (error) {
-      console.error('Error sending email:', error);
-      throw error;
-    }
-  };
-
+export const sendEmail = async (emailData) => {
+  try {
+    const response = await axios.post(
+      `http://localhost:8080/api/email`,
+      emailData
+    );
+    console.log(response.data.message);
+    return response.data;
+  } catch (error) {
+    console.error("Error sending email:", error);
+    throw error;
+  }
+};

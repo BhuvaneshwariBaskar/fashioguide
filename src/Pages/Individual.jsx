@@ -6,6 +6,7 @@ import {
   addRemoveWishlist,
 } from "../axios/user.axios";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
 const Individual = ({ user }) => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const Individual = ({ user }) => {
   const [quantity, setQuantity] = useState(1);
   const [cart, setCart] = useState(false);
   const [fav, setFav] = useState(false);
-
+console.log(user);
   const passedData = location.state && location.state.data;
   var size = passedData.size;
   var itemsize = ["XS", "S", "M", "L", "XL"];
@@ -86,6 +87,17 @@ const Individual = ({ user }) => {
     } catch (error) {
       console.error("Error adding to cart:", error.message);
     }
+  };
+  const HandleTryOn = () => {
+
+    axios
+      .post("http://localhost:5000/tryon")
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error("Error", error);
+      });
   };
   return (
     <>
@@ -208,8 +220,8 @@ const Individual = ({ user }) => {
                 )}
               </div>
 
-              <div className=" w-1/2 mt-8">
-                <button className="bg-[#FF3754] text-white text-xl p-3 h-full w-full">
+              <div className=" w-1/2 mt-8" >
+                <button className="bg-[#FF3754] text-white text-xl p-3 h-full w-full" onClick={()=>HandleTryOn()}>
                   Try On
                 </button>
               </div>

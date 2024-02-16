@@ -7,12 +7,15 @@ import { getCart } from "../axios/dress.axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { RemoveFromCart, sendEmail } from "../axios/user.axios";
+import { loadStripe } from "@stripe/stripe-js";
+
+
 
 const Cart = ({ user }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [indiv, setIndiv] = useState([]);
-  const [payment, setPayment] = useState("")
+  const [payment, setPayment] = useState("");
 
   useEffect(() => {
     getCart(user.user_id).then((res) => {
@@ -21,11 +24,11 @@ const Cart = ({ user }) => {
     });
   }, []);
 
-  const navigateToPage=(e)=>{
-    if(payment==="upiPay"){
-      navigate('/payment', { state: { data: e } });
+  const navigateToPage = (e) => {
+    if (payment === "upiPay") {
+      navigate("/payment", { state: { data: e } });
     }
-  }
+  };
   let totalPrice = indiv.reduce(
     (total, item) => total + parseFloat(item.price) * item.quantity,
     0
@@ -66,20 +69,35 @@ const Cart = ({ user }) => {
       console.error("Error adding to cart:", error.message);
     }
   };
-
-  const handleProceedToPay = async () => {
-    const emailData = {
-      to: user.email, 
-      subject: 'Order Confirmation',
-      text: 'Thank you for your order!'
-    };
+  const MakePayment = async (apiURL) => {
+    const stripe = await loadStripe(
+      "pk_test_51OjanBSH4eljq6cu0gDWtNdlNQ8wa2FNVPIanWXILfAp6vLQUpK2McMsUCyVLdBnxP7CjKSf7R33A0HRCMDbDGzO00oRi82giy"
+    );
+  
     try {
-        const response = await sendEmail(emailData);
-        console.log(response.message);
-      } catch (error) {
-        console.error('Error sending email:', error);
+      const response = await fetch(`${apiURL}/create-checkout-session`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ products: indiv })
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to create checkout session');
       }
-}
+  
+      const session = await response.json();
+      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+  
+      if (result.error) {
+        console.error(result.error);
+      }
+    } catch (error) {
+      console.error('Error in MakePayment:', error.message);
+    }
+  };
+
   return (
     <>
       <Navbar2></Navbar2>
@@ -221,15 +239,23 @@ const Cart = ({ user }) => {
               <label htmlFor="paymentMethod" className="block mb-2">
                 Payment Method:
               </label>
-              <select id="paymentMethod" className="border rounded px-2 py-1" onSelect={()=>setPayment(document.getElementById("paymentMethod").value)} >
+              <select
+                id="paymentMethod"
+                className="border rounded px-2 py-1"
+                onSelect={() =>
+                  setPayment(document.getElementById("paymentMethod").value)
+                }
+              >
                 <option value="cashOnDelivery">Cash on Delivery</option>
                 <option value="upiPay">UPI Pay</option>
               </select>
             </div>
           </div>
           <div className="flex items-center justify-center mt-5">
-            <button className="bg-red-500 text-white py-2 px-4 mt-4 rounded"
-             onClick={handleProceedToPay}>
+            <button
+              className="bg-red-500 text-white py-2 px-4 mt-4 rounded"
+              onClick={() => MakePayment()}
+            >
               Proceed to Pay
             </button>
           </div>
