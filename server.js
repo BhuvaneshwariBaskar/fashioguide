@@ -4,7 +4,7 @@ const db = require('./database/database');
 const cors = require("cors");
 const morgan = require("morgan");
 const bodyParser = require('body-parser');
-const stripe= require("stripe") (process.env.STRIPE_SECRET);
+
 
 const authRoute = require("./routes/auth.routes");
 
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 
 
-let port = "8080";
+let port = "8000";
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
