@@ -7,7 +7,7 @@ import { getCart } from "../axios/dress.axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { RemoveFromCart, sendEmail } from "../axios/user.axios";
-import { loadStripe } from "@stripe/stripe-js";
+// import { loadStripe } from "@stripe/stripe-js";
 
 
 
@@ -70,32 +70,32 @@ const Cart = ({ user }) => {
     }
   };
   const MakePayment = async (apiURL) => {
-    const stripe = await loadStripe(
-      "pk_test_51OjanBSH4eljq6cu0gDWtNdlNQ8wa2FNVPIanWXILfAp6vLQUpK2McMsUCyVLdBnxP7CjKSf7R33A0HRCMDbDGzO00oRi82giy"
-    );
+    // const stripe = await loadStripe(
+    //   "pk_test_51OjanBSH4eljq6cu0gDWtNdlNQ8wa2FNVPIanWXILfAp6vLQUpK2McMsUCyVLdBnxP7CjKSf7R33A0HRCMDbDGzO00oRi82giy"
+    // );
   
-    try {
-      const response = await fetch(`${apiURL}/create-checkout-session`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ products: indiv })
-      });
+    // try {
+    //   const response = await fetch(`${apiURL}/create-checkout-session`, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify({ products: indiv })
+    //   });
   
-      if (!response.ok) {
-        throw new Error('Failed to create checkout session');
-      }
+    //   if (!response.ok) {
+    //     throw new Error('Failed to create checkout session');
+    //   }
   
-      const session = await response.json();
-      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+    //   const session = await response.json();
+    //   const result = await stripe.redirectToCheckout({ sessionId: session.id });
   
-      if (result.error) {
-        console.error(result.error);
-      }
-    } catch (error) {
-      console.error('Error in MakePayment:', error.message);
-    }
+    //   if (result.error) {
+    //     console.error(result.error);
+    //   }
+    // } catch (error) {
+    //   console.error('Error in MakePayment:', error.message);
+    // }
   };
 
   return (

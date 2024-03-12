@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const signup = (email, name, password, phone) =>
-  axios.post(`http://localhost:8080/api/register`, {
+  axios.post(`http://localhost:8000/api/register`, {
     email,
     name,
     password,
@@ -9,31 +9,31 @@ export const signup = (email, name, password, phone) =>
   });
 
 export const login = (email, password) =>
-  axios.post(`http://localhost:8080/api/login`, {
+  axios.post(`http://localhost:8000/api/login`, {
     email,
     password,
   });
 
 export const addRemoveWishlist = async (dress_id, user_id, action) =>
-  await axios.post(`http://localhost:8080/api/wishlist`, {
+  await axios.post(`http://localhost:8000/api/wishlist`, {
     dress_id,
     user_id,
     action,
   });
 
 export const addRemoveToCart = async (item, user_id, action) =>
-  await axios.post(`http://localhost:8080/api/addremovecart`, {
+  await axios.post(`http://localhost:8000/api/addremovecart`, {
     item,
     user_id,
     action,
   });
 export const RemoveFromCart = async (item, user_id) =>
-  await axios.post(`http://localhost:8080/api/removecart`, {
+  await axios.post(`http://localhost:8000/api/removecart`, {
     item,
     user_id,
   });
 export const getWishlist = async (user_id) =>
-  await axios.post(`http://localhost:8080/api/getwishlist`, {
+  await axios.post(`http://localhost:8000/api/getwishlist`, {
     user_id,
   });
 
@@ -46,7 +46,7 @@ export const updateProfile = async (
   address,
   pincode
 ) =>
-  await axios.post(`http://localhost:8080/api/profile`, {
+  await axios.post(`http://localhost:8000/api/profile`, {
     user_id,
     name,
     country,
@@ -56,14 +56,14 @@ export const updateProfile = async (
     pincode,
   });
 // export const makePayment = async (products) =>
-//   await axios.post(`http://localhost:8080/api/create-checkout-session`, {
+//   await axios.post(`http://localhost:8000/api/create-checkout-session`, {
 //     products,
 //   });
 
 export const sendEmail = async (emailData) => {
   try {
     const response = await axios.post(
-      `http://localhost:8080/api/email`,
+      `http://localhost:8000/api/email`,
       emailData
     );
     console.log(response.data.message);
