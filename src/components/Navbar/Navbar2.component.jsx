@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import logo from "../../asset/logo.png";
 import axios from "axios";
 
-
 const Navbar2 = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
@@ -11,7 +10,6 @@ const Navbar2 = () => {
     setDropdownVisible(!isDropdownVisible);
   };
   const HandleRecommendation = () => {
-
     axios
       .post("http://localhost:5000/recommendation")
       .then((response) => {
@@ -24,7 +22,7 @@ const Navbar2 = () => {
   return (
     <nav className="bg-transparent p-4 flex justify-between items-center">
       <div>
-      <Link to="/">
+        <Link to="/">
           <img src={logo} alt="Logo" className="text-black w-50 h-24" />
         </Link>
       </div>
@@ -33,13 +31,14 @@ const Navbar2 = () => {
         <Link to="/">Home</Link>
         <Link to="/collections">Collections</Link>
 
-        
         <Link to="/category">Category</Link>
 
-        <Link to="/recommendation" onClick={()=>HandleRecommendation()}>Get Recommendation</Link>
+        <Link to="/recommendation" onClick={() => HandleRecommendation()}>
+          Get Recommendation
+        </Link>
         <Link to="/tryon">Try On</Link>
         <Link to="/contact">Contact</Link>
-        <Link to="/">
+        <Link to="/fav">
           <img
             width="25"
             height="25"
